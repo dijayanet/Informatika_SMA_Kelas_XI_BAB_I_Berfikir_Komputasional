@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berpikir Komputasional - Informatika SMA Kelas XI</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   GAYA UTAMA - OPTIMIZED
+   GAYA UTAMA - PROFESIONAL & INTERAKTIF
    ============================================================ */
 :root{
   --blue:#0B5FA5; --blue-dark:#083F6E; --blue-soft:#E7F1FA;
@@ -16,157 +16,194 @@
   --ink:#0F2233; --muted:#5B7288; --line:#DCE6EE; --bg:#F4F8FB; --white:#fff;
   --radius:16px; --shadow:0 10px 30px -12px rgba(11,95,165,.28);
   --gold:#FFD700;
+  --gradient-hero: linear-gradient(135deg, #083F6E 0%, #0B5FA5 40%, #0E8F6F 100%);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
 button{font-family:inherit;cursor:pointer;border:0}
 input,select,textarea{font-family:inherit;font-size:14px}
 .hidden{display:none !important}
 
-header{position:sticky;top:0;z-index:40;background:linear-gradient(105deg,var(--blue-dark),var(--blue) 55%,var(--green));color:#fff;box-shadow:var(--shadow)}
-.hwrap{max-width:1280px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px}
+/* ===== SCROLL BAR ===== */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;z-index:40;background:var(--gradient-hero);color:#fff;box-shadow:var(--shadow)}
+.hwrap{max-width:1280px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;text-align:center;flex:0 0 auto}
-.brand h1{font-size:16px;font-weight:800;letter-spacing:.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand p{font-size:11.5px;opacity:.85}
+.avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;text-align:center;flex:0 0 auto;transition:transform .3s}
+.avatar:hover{transform:scale(1.05)}
+.brand h1{font-size:15px;font-weight:800;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand p{font-size:11px;opacity:.85}
 .hspace{flex:1}
-.hbtn{background:rgba(255,255,255,.16);color:#fff;padding:8px 13px;border-radius:10px;font-size:12.5px;font-weight:600;backdrop-filter:blur(4px)}
-.hbtn:hover{background:rgba(255,255,255,.3)}
-.hbtn.cta{background:var(--orange)}
+.hbtn{background:rgba(255,255,255,.12);color:#fff;padding:7px 14px;border-radius:30px;font-size:12px;font-weight:600;backdrop-filter:blur(8px);transition:all .3s;border:1px solid rgba(255,255,255,.08)}
+.hbtn:hover{background:rgba(255,255,255,.25);transform:translateY(-1px)}
+.hbtn.cta{background:var(--orange);border-color:var(--orange)}
 .hbtn.cta:hover{background:var(--orange-dark)}
 #menuBtn{display:none}
 
-.layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:290px 1fr;gap:20px;padding:20px 16px 60px}
-aside{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px;height:fit-content;position:sticky;top:82px;max-height:calc(100vh - 100px);overflow:auto}
-.sb-title{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--muted);text-transform:uppercase;margin:14px 8px 6px}
-.sb-title:first-child{margin-top:4px}
-.navitem{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;color:var(--ink);padding:9px 11px;border-radius:10px;font-size:13.5px;font-weight:500}
+/* ===== LAYOUT ===== */
+.layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:24px;padding:20px 16px 60px}
+aside{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;height:fit-content;position:sticky;top:78px;max-height:calc(100vh - 100px);overflow:auto;box-shadow:var(--shadow)}
+.sb-title{font-size:10px;font-weight:800;letter-spacing:1.2px;color:var(--muted);text-transform:uppercase;margin:14px 8px 8px}
+.sb-title:first-child{margin-top:0}
+.navitem{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;color:var(--ink);padding:8px 12px;border-radius:10px;font-size:13px;font-weight:500;transition:all .2s}
 .navitem:hover{background:var(--blue-soft)}
-.navitem.active{background:linear-gradient(90deg,var(--blue),var(--green));color:#fff;font-weight:700}
-.navitem .dot{width:7px;height:7px;border-radius:50%;background:var(--line);flex:0 0 auto}
+.navitem.active{background:var(--gradient-hero);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(11,95,165,.3)}
+.navitem .dot{width:8px;height:8px;border-radius:50%;background:var(--line);flex:0 0 auto;transition:all .3s}
 .navitem.done .dot{background:var(--green)}
 .navitem.active .dot{background:#fff}
 .sub{padding-left:16px}
+.navitem .icon{font-size:16px}
 
-.progwrap{background:var(--blue-soft);border-radius:12px;padding:11px 12px;margin-bottom:6px}
+.progwrap{background:linear-gradient(135deg,var(--blue-soft),var(--green-soft));border-radius:12px;padding:12px 14px;margin-bottom:6px}
 .progwrap b{font-size:12px}
-.bar{height:8px;background:#fff;border-radius:99px;overflow:hidden;margin-top:7px}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--green));width:0;transition:width .4s}
+.bar{height:8px;background:rgba(255,255,255,.7);border-radius:99px;overflow:hidden;margin-top:7px}
+.bar i{display:block;height:100%;background:var(--gradient-hero);width:0;transition:width .6s ease}
 
 main{min-width:0}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:18px;box-shadow:0 1px 2px rgba(15,34,51,.04)}
-.card h2{font-size:22px;font-weight:800;color:var(--blue-dark);margin-bottom:4px}
-.card h3{font-size:16px;font-weight:700;margin:18px 0 8px;color:var(--blue-dark)}
-.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--green);text-transform:uppercase}
-.lead{color:var(--muted);font-size:14.5px;margin-top:8px}
-ul.points{margin:8px 0 0 18px}
-ul.points li{margin:5px 0;font-size:14.5px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:box-shadow .3s}
+.card:hover{box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.card h2{font-size:24px;font-weight:800;color:var(--blue-dark);margin-bottom:6px}
+.card h3{font-size:17px;font-weight:700;margin:20px 0 10px;color:var(--blue-dark)}
+.card h4{font-size:15px;font-weight:700;margin:16px 0 8px;color:var(--blue)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.2px;color:var(--green);text-transform:uppercase}
+.lead{color:var(--muted);font-size:15px;margin-top:6px;line-height:1.7}
+ul.points{margin:8px 0 0 20px}
+ul.points li{margin:5px 0;font-size:14.5px;list-style-type:"▸ ";padding-left:6px}
+ul.points li::marker{color:var(--blue);font-weight:700}
+
 table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px;overflow:hidden;border-radius:12px}
-th{background:var(--blue-soft);color:var(--blue-dark);text-align:left;padding:10px;font-size:12.5px;letter-spacing:.4px}
-td{padding:10px;border-top:1px solid var(--line);vertical-align:top}
-th:last-child{background:var(--green-soft);color:#0a6a53}
-.figure{background:linear-gradient(180deg,#fbfdff,#f2f7fb);border:1px dashed var(--line);border-radius:14px;padding:14px;margin:14px 0;text-align:center}
-.figure svg{max-width:100%;height:auto}
-.figcap{font-size:12px;color:var(--muted);margin-top:8px}
-.btn{background:var(--blue);color:#fff;padding:11px 18px;border-radius:11px;font-weight:700;font-size:14px;transition:background .2s}
-.btn:hover{background:var(--blue-dark)}
-.btn.orange{background:var(--orange)}.btn.orange:hover{background:var(--orange-dark)}
-.btn.green{background:var(--green)}
-.btn.ghost{background:#fff;color:var(--blue);border:1.5px solid var(--line)}
-.btn.ghost:hover{background:var(--blue-soft)}
-.btn.sm{padding:7px 12px;font-size:12.5px;border-radius:9px}
+th{background:var(--gradient-hero);color:#fff;text-align:left;padding:10px 14px;font-size:12px;letter-spacing:.4px;font-weight:600}
+td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+tr:nth-child(even){background:#f8fafc}
+tr:hover{background:var(--blue-soft)}
+
+.figure{background:linear-gradient(180deg,#fbfdff,#f2f7fb);border:1px dashed var(--line);border-radius:14px;padding:16px;margin:14px 0;text-align:center;transition:all .3s}
+.figure:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(11,95,165,.08)}
+.figure svg{max-width:100%;height:auto;border-radius:8px}
+.figcap{font-size:12px;color:var(--muted);margin-top:8px;font-style:italic}
+
+.btn{background:var(--blue);color:#fff;padding:10px 22px;border-radius:30px;font-weight:600;font-size:14px;transition:all .3s;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(11,95,165,.3)}
+.btn.orange{background:var(--orange)}.btn.orange:hover{background:var(--orange-dark);box-shadow:0 6px 20px rgba(249,115,22,.3)}
+.btn.green{background:var(--green)}.btn.green:hover{background:#0a7a5a}
+.btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--line)}
+.btn.ghost:hover{background:var(--blue-soft);border-color:var(--blue);transform:translateY(-2px)}
+.btn.sm{padding:6px 16px;font-size:12px;border-radius:20px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.field{margin-bottom:12px}
+.field{margin-bottom:14px}
 .field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px;color:var(--ink)}
-.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:11px;background:#fff;outline:none;transition:border .2s}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue)}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:11px;background:#fff;outline:none;transition:border .3s,box-shadow .3s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(11,95,165,.1)}
 .err{color:#c02626;font-size:12px;margin-top:4px}
-.badge{display:inline-block;background:var(--green-soft);color:#0a6a53;padding:4px 10px;border-radius:99px;font-size:11.5px;font-weight:700}
+.badge{display:inline-block;background:var(--green-soft);color:#0a6a53;padding:3px 12px;border-radius:99px;font-size:11px;font-weight:700}
 .badge.blue{background:var(--blue-soft);color:var(--blue-dark)}
 .badge.orange{background:#FFF0E4;color:var(--orange-dark)}
 .badge.gold{background:var(--gold);color:#7A6200}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.tile{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;cursor:pointer;transition:transform .15s,box-shadow .15s}
-.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.note{background:var(--green-soft);border-left:4px solid var(--green);padding:12px 14px;border-radius:0 12px 12px 0;font-size:13.5px;margin-top:12px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tile{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;cursor:pointer;transition:all .3s}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--blue)}
+.tile .icon{font-size:28px;display:block;margin-bottom:6px}
+.note{background:var(--green-soft);border-left:4px solid var(--green);padding:12px 16px;border-radius:0 12px 12px 0;font-size:13.5px;margin-top:12px}
 .note.warn{background:#FFF6E9;border-color:var(--orange)}
 .note.gold{background:#FFFDE6;border-color:var(--gold)}
+.note.info{background:var(--blue-soft);border-color:var(--blue)}
 
-.q{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
-.q p.qt{font-weight:700;font-size:14.5px;margin-bottom:9px}
-.opt{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;border:1.5px solid var(--line);border-radius:11px;margin-bottom:7px;cursor:pointer;font-size:14px;background:#fff;transition:all .15s}
-.opt:hover{border-color:var(--blue)}
+/* quiz */
+.q{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;transition:all .3s}
+.q:hover{border-color:var(--blue);box-shadow:0 2px 12px rgba(11,95,165,.06)}
+.q p.qt{font-weight:700;font-size:15px;margin-bottom:10px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border:2px solid var(--line);border-radius:11px;margin-bottom:6px;cursor:pointer;font-size:14px;background:#fff;transition:all .2s}
+.opt:hover{border-color:var(--blue);background:var(--blue-soft)}
 .opt.sel{border-color:var(--blue);background:var(--blue-soft)}
 .opt.ok{border-color:var(--green);background:var(--green-soft)}
 .opt.no{border-color:#e05252;background:#FDECEC}
-.expl{font-size:13px;background:var(--blue-soft);padding:9px 11px;border-radius:10px;margin-top:6px;color:var(--blue-dark)}
-.scorebox{text-align:center;padding:20px;border-radius:16px;background:linear-gradient(135deg,var(--blue-soft),var(--green-soft))}
-.scorebox .num{font-size:46px;font-weight:800;color:var(--blue-dark);line-height:1}
+.expl{font-size:13px;background:var(--blue-soft);padding:10px 14px;border-radius:10px;margin-top:6px;color:var(--blue-dark)}
+.scorebox{text-align:center;padding:24px;border-radius:16px;background:linear-gradient(135deg,var(--blue-soft),var(--green-soft))}
+.scorebox .num{font-size:48px;font-weight:800;color:var(--blue-dark);line-height:1.2}
 
-.overlay{position:fixed;inset:0;background:rgba(8,30,50,.75);backdrop-filter:blur(6px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
-.modal{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:24px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);margin:auto}
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(8,30,50,.7);backdrop-filter:blur(8px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.modal{background:#fff;border-radius:20px;max-width:520px;width:100%;padding:28px;box-shadow:0 30px 70px rgba(0,0,0,.4);margin:auto}
 .modal.wide{max-width:1000px}
-.modal h2{font-size:20px;color:var(--blue-dark);font-weight:800}
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
-.tab{padding:8px 13px;border-radius:99px;background:var(--bg);font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .15s}
-.tab.active{background:var(--blue);color:#fff}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:13.5px;z-index:200;box-shadow:var(--shadow)}
+.modal h2{font-size:22px;color:var(--blue-dark);font-weight:800}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0}
+.tab{padding:8px 16px;border-radius:99px;background:var(--bg);font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:all .2s}
+.tab.active{background:var(--gradient-hero);color:#fff}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 24px;border-radius:14px;font-size:13.5px;z-index:200;box-shadow:0 10px 40px rgba(0,0,0,.3);animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .tblwrap{overflow:auto;max-height:50vh;border:1px solid var(--line);border-radius:12px}
-footer{background:var(--blue-dark);color:#fff;padding:26px 16px;text-align:center;font-size:13px}
+footer{background:var(--blue-dark);color:#fff;padding:28px 16px;text-align:center;font-size:13px;border-top:4px solid var(--gold)}
 footer b{color:#fff}
 footer span{opacity:.75}
 
-.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.lab-card{background:#f8fafc;border-radius:12px;padding:16px;border:1px solid var(--line)}
-.lab-card h4{color:var(--blue-dark);margin-bottom:8px}
+/* Lab */
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.lab-card{background:#f8fafc;border-radius:12px;padding:16px;border:1px solid var(--line);transition:all .3s}
+.lab-card:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(11,95,165,.08)}
+.lab-card h4{color:var(--blue-dark);margin-bottom:8px;font-size:15px}
 .stack-area{display:flex;flex-direction:column-reverse;align-items:center;gap:4px;min-height:120px;background:#eef2f7;border-radius:10px;padding:10px}
-.stack-item{background:var(--blue);color:#fff;padding:8px 20px;border-radius:6px;width:80%;text-align:center;font-weight:600}
-.stack-item:last-child{background:var(--orange);color:#fff}
+.stack-item{background:var(--blue);color:#fff;padding:8px 20px;border-radius:6px;width:80%;text-align:center;font-weight:600;transition:all .3s}
+.stack-item:last-child{background:var(--orange)}
 .queue-area{display:flex;flex-direction:row;align-items:center;gap:6px;min-height:60px;background:#eef2f7;border-radius:10px;padding:10px;flex-wrap:wrap}
 .queue-item{background:var(--orange);color:#fff;padding:6px 18px;border-radius:6px;font-weight:600}
-.tree-area,.graph-area{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:12px;background:#eef2f7;border-radius:10px;min-height:80px}
-.tree-node{background:var(--blue);color:#fff;padding:6px 14px;border-radius:30px;font-weight:600}
-.graph-node{background:var(--orange);color:#fff;padding:6px 14px;border-radius:30px;font-weight:600}
-.simulasi-algo{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:16px;border-left:4px solid var(--orange)}
-.simulasi-algo h5{color:var(--blue-dark);margin-bottom:6px}
-.step-list{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
-.step-badge{background:var(--blue);color:#fff;padding:4px 14px;border-radius:20px;font-size:0.75rem}
+.tree-area,.graph-area{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:12px;background:#eef2f7;border-radius:10px;min-height:80px}
+.tree-node{background:var(--blue);color:#fff;padding:6px 14px;border-radius:30px;font-weight:600;font-size:13px}
+.graph-node{background:var(--orange);color:#fff;padding:6px 14px;border-radius:30px;font-weight:600;font-size:13px}
+.simulasi-algo{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:14px;border-left:4px solid var(--orange)}
+.simulasi-algo h5{color:var(--blue-dark);margin-bottom:6px;font-size:15px}
+.step-list{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.step-badge{background:var(--blue);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px}
 .decision-card{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:12px;border-left:5px solid var(--gold)}
 .decision-card select{padding:6px 12px;border-radius:8px;border:2px solid #d0d8e0;font-family:inherit;margin:4px 6px 4px 0;background:white}
 
 .array-visual{background:#f0f4f9;border-radius:12px;padding:16px;margin:8px 0;text-align:center;overflow-x:auto}
-.array-box{display:inline-block;padding:8px 16px;margin:3px;border:2px solid var(--blue);border-radius:6px;background:var(--blue-soft);font-weight:700;min-width:45px}
+.array-box{display:inline-block;padding:8px 16px;margin:3px;border:2px solid var(--blue);border-radius:6px;background:var(--blue-soft);font-weight:700;min-width:44px;transition:all .3s}
 .array-box .idx{font-size:10px;color:var(--muted);display:block;font-weight:400}
-.array-box.highlight{background:var(--orange);color:#fff;border-color:var(--orange-dark)}
+.array-box.highlight{background:var(--orange);color:#fff;border-color:var(--orange-dark);transform:scale(1.05)}
 .array-box.green{background:var(--green);color:#fff;border-color:var(--green)}
 
 .ll-visual{background:#f0f4f9;border-radius:12px;padding:16px;margin:8px 0;text-align:center;overflow-x:auto}
-.ll-node{display:inline-block;padding:8px 16px;margin:3px;background:var(--blue);color:#fff;border-radius:8px;font-weight:600;position:relative}
+.ll-node{display:inline-block;padding:8px 16px;margin:3px;background:var(--blue);color:#fff;border-radius:8px;font-weight:600;position:relative;transition:all .3s}
+.ll-node:hover{transform:scale(1.05)}
 .ll-node .data{font-weight:700}
-.ll-node .ptr{font-size:10px;opacity:0.7}
+.ll-node .ptr{font-size:10px;opacity:.7}
 .ll-arrow{display:inline-block;font-size:20px;color:var(--orange);margin:0 2px}
 .ll-node.head{background:var(--gold);color:#000}
 .ll-node.tail{background:var(--orange);color:#fff}
 .ll-node.null{background:#ddd;color:#666}
 
-.quiz-option{display:block;margin:6px 0;padding:10px 16px;background:#f0f4f9;border-radius:10px;cursor:pointer;transition:0.2s;border:2px solid transparent}
+.quiz-option{display:block;margin:6px 0;padding:10px 16px;background:#f0f4f9;border-radius:10px;cursor:pointer;transition:all .2s;border:2px solid transparent}
 .quiz-option:hover{background:#e4eaf0}
 .quiz-option.selected{border-color:var(--gold);background:#f8f5e8}
 .quiz-option.correct{border-color:#27ae60;background:#e8f5e9}
 .quiz-option.wrong{border-color:#e74c3c;background:#fce4ec}
 
-.sertifikat-area{background:var(--blue-dark);color:#fff;padding:24px;border-radius:var(--radius);text-align:center;margin-top:16px;border:3px solid var(--gold)}
-.sertifikat-area h3{color:var(--gold);font-size:1.8rem}
+.sertifikat-area{background:var(--blue-dark);color:#fff;padding:28px;border-radius:var(--radius);text-align:center;margin-top:16px;border:4px solid var(--gold)}
+.sertifikat-area h3{color:var(--gold);font-size:2rem}
 .sertifikat-area .btn{background:var(--gold);color:var(--blue-dark)}
+.sertifikat-area .btn:hover{background:#e6c200}
+
+/* Hero cards */
+.hero-card{background:var(--gradient-hero);color:#fff;border:0;position:relative;overflow:hidden}
+.hero-card::after{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none}
+.hero-card .badge{background:rgba(255,255,255,.2);color:#fff}
+.hero-card .btn.ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+.hero-card .btn.ghost:hover{background:rgba(255,255,255,.15);border-color:#fff}
 
 @media(max-width:900px){
   .layout{grid-template-columns:1fr;padding:14px 12px 50px}
-  aside{position:fixed;inset:0 auto 0 0;width:280px;z-index:60;border-radius:0;max-height:100vh;transform:translateX(-105%);transition:transform .28s;box-shadow:var(--shadow)}
+  aside{position:fixed;inset:0 auto 0 0;width:280px;z-index:60;border-radius:0;max-height:100vh;transform:translateX(-105%);transition:transform .3s;box-shadow:0 10px 40px rgba(0,0,0,.2)}
   aside.open{transform:none}
   #menuBtn{display:inline-block}
-  .brand h1{font-size:14px;max-width:150px}
+  .brand h1{font-size:14px;max-width:140px}
   .card{padding:16px}
-  .card h2{font-size:19px}
+  .card h2{font-size:20px}
+  .grid2{grid-template-columns:1fr}
+  .lab-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -176,14 +213,14 @@ footer span{opacity:.75}
 <div class="overlay" id="gate">
   <div class="modal">
     <div style="text-align:center">
-      <div style="width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--green));margin:0 auto 10px;display:flex;align-items:center;justify-content:center">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="3" width="20" height="12" rx="2"/><path d="M8 21h8M12 15v6"/></svg>
+      <div style="width:60px;height:60px;border-radius:16px;background:var(--gradient-hero);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(11,95,165,.3)">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="3" width="20" height="12" rx="2"/><path d="M8 21h8M12 15v6"/></svg>
       </div>
       <span class="eyebrow">Informatika SMA</span>
-      <h2>Absensi Masuk Siswa</h2>
+      <h2 style="font-size:22px">Absensi Masuk Siswa</h2>
       <p style="font-size:13.5px;color:var(--muted);margin-top:6px">Isi data berikut untuk mulai belajar <b>Berpikir Komputasional</b>.</p>
     </div>
-    <div style="margin-top:18px">
+    <div style="margin-top:20px">
       <div class="field"><label>Nama Lengkap Siswa *</label><input id="gName" placeholder="Contoh: Aisyah Nur Fadhilah"><div class="err hidden" id="eName">Nama wajib diisi.</div></div>
       <div class="row" style="gap:10px">
         <div class="field" style="flex:1;min-width:130px"><label>Kelas *</label>
@@ -193,10 +230,8 @@ footer span{opacity:.75}
         <div class="field" style="flex:1;min-width:130px"><label>Rombel / Jurusan</label><input id="gRombel" placeholder="Contoh: XI-1 / IPA 2"></div>
       </div>
       <div class="field"><label>Alamat *</label><input id="gAddr" placeholder="Contoh: Jatiwangi, Majalengka"><div class="err hidden" id="eAddr">Alamat wajib diisi.</div></div>
-      <div class="field"><label>Mata Pelajaran</label><input id="gSubject" value="Informatika" readonly style="background:var(--bg);color:var(--muted)"></div>
-      <button class="btn orange" style="width:100%" onclick="submitGate()">Mulai Belajar</button>
+      <button class="btn orange" style="width:100%;justify-content:center" onclick="submitGate()">🚀 Mulai Belajar</button>
       <p id="gateStatus" style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px"></p>
-      <p style="font-size:11.5px;color:var(--muted);text-align:center;margin-top:8px">Data absensi dikirim ke spreadsheet guru &amp; disimpan di perangkat ini.</p>
     </div>
   </div>
 </div>
@@ -204,29 +239,32 @@ footer span{opacity:.75}
 <!-- ============ HEADER ============ -->
 <header>
   <div class="hwrap">
-    <button class="hbtn" id="menuBtn" onclick="toggleSidebar()">&#9776;</button>
+    <button class="hbtn" id="menuBtn" onclick="toggleSidebar()">☰</button>
     <div class="brand">
-      <div class="avatar" id="schoolLogo">LOGO<br>SEKOLAH</div>
-      <div class="avatar" id="teacherPhoto">FOTO<br>GURU</div>
+      <div class="avatar" id="schoolLogo">LOGO</div>
+      <div class="avatar" id="teacherPhoto">FOTO</div>
       <div style="min-width:0">
         <h1 id="hTeacher">Ramdan Ahmad Dijaya, S.Pd</h1>
-        <p><span id="hRole">Guru Informatika</span> &middot; <span id="hClasses">Kelas X, XI, XII SMA</span></p>
+        <p><span id="hRole">Guru Informatika</span> · <span id="hClasses">Kelas X, XI, XII</span></p>
       </div>
     </div>
     <div class="hspace"></div>
-    <button class="hbtn" onclick="go('petunjuk')">Petunjuk</button>
+    <button class="hbtn" onclick="go('petunjuk')">📖</button>
     <button class="hbtn cta" onclick="go('lab')">🧪 Lab</button>
     <button class="hbtn" onclick="go('quiz')">📝 Quiz</button>
-    <button class="hbtn" onclick="openTeacher()">Mode Guru</button>
-    <button class="hbtn" id="logoutBtn" style="display:none;background:rgba(220,38,38,.3)" onclick="logoutStudent()">🚪 Log</button>
+    <button class="hbtn" onclick="openTeacher()">⚙️</button>
+    <button class="hbtn" id="logoutBtn" style="display:none;background:rgba(220,38,38,.3)" onclick="logoutStudent()">🚪</button>
   </div>
 </header>
 
 <!-- ============ LAYOUT ============ -->
 <div class="layout">
   <aside id="sidebar">
-    <div class="progwrap"><b>Progres Belajar</b><div class="bar"><i id="progBar"></i></div>
-      <div style="font-size:11.5px;color:var(--muted);margin-top:6px" id="progText">0 dari 0 materi selesai</div></div>
+    <div class="progwrap">
+      <b>📊 Progres Belajar</b>
+      <div class="bar"><i id="progBar"></i></div>
+      <div style="font-size:11.5px;color:var(--muted);margin-top:6px" id="progText">0 dari 0 materi selesai</div>
+    </div>
     <div id="navList"></div>
   </aside>
   <main id="main"></main>
@@ -234,17 +272,17 @@ footer span{opacity:.75}
 
 <footer>
   <b id="fTeacher">Ramdan Ahmad Dijaya, S.Pd</b><br>
-  <span id="fRole">Guru Informatika</span> &mdash; <span id="fClasses">Mengajar Kelas X, XI, dan XII SMA</span><br>
-  <span id="fSchool">SMA &middot; Mata Pelajaran Informatika</span><br>
-  <span style="font-size:11.5px">&copy; <span id="year"></span> Modul Interaktif Berpikir Komputasional</span>
+  <span id="fRole">Guru Informatika</span> — <span id="fClasses">Mengajar Kelas X, XI, dan XII</span><br>
+  <span id="fSchool">SMA · Mata Pelajaran Informatika</span><br>
+  <span style="font-size:11px;opacity:.5">© <span id="year"></span> Modul Interaktif Berpikir Komputasional</span>
 </footer>
 
 <script>
 /* ========================================================================
-   🚀 APLIKASI BERPIKIR KOMPUTASIONAL - STABLE VERSION
+   🚀 APLIKASI BERPIKIR KOMPUTASIONAL - PROFESIONAL
    ======================================================================== */
 
-// ==================== STORAGE UTILITY ====================
+// ==================== STORAGE ====================
 var K = {
   cfg: 'bk_cfg',
   student: 'bk_student',
@@ -255,30 +293,19 @@ var K = {
   lab: 'bk_lab'
 };
 
-function loadSafe(key, defaultVal) {
-  try {
-    var data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : defaultVal;
-  } catch(e) {
-    return defaultVal;
-  }
+function loadSafe(key, def) {
+  try { var v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch(e) { return def; }
+}
+function saveSafe(key, v) {
+  try { localStorage.setItem(key, JSON.stringify(v)); return true; } catch(e) { return false; }
 }
 
-function saveSafe(key, val) {
-  try {
-    localStorage.setItem(key, JSON.stringify(val));
-    return true;
-  } catch(e) {
-    return false;
-  }
-}
-
-// ==================== GLOBAL STATE ====================
+// ==================== STATE ====================
 var cfg = loadSafe(K.cfg, {
   teacher: 'Ramdan Ahmad Dijaya, S.Pd',
   role: 'Guru Informatika',
-  classes: 'Kelas X, XI, XII SMA',
-  school: 'SMA &middot; Mata Pelajaran Informatika',
+  classes: 'Kelas X, XI, XII',
+  school: 'SMA · Mata Pelajaran Informatika',
   pin: '1234',
   sheetUrl: '',
   photo: '',
@@ -296,24 +323,372 @@ var labData = loadSafe(K.lab, {
   graph: ['A','B','C']
 });
 
-// ==================== MATERI & PAGES ====================
+// ==================== MATERI DENGAN TEORI + GAMBAR ====================
 var MATERI = [
-  { id: 'pengantar', group: '1. Dasar Berpikir Komputasional', title: 'a. Pengantar CT' },
-  { id: 'array', group: '2. Struktur Data - Array', title: 'b. Array' },
-  { id: 'linkedlist', group: '2. Struktur Data - Linked List', title: 'c. Linked List' },
-  { id: 'stack', group: '3. Stack & Queue', title: 'a. Stack' },
-  { id: 'queue', group: '3. Stack & Queue', title: 'b. Queue' },
-  { id: 'tree', group: '4. Tree & Graph', title: 'a. Tree & Graph' },
-  { id: 'strategi', group: '5. Strategi Algoritmik', title: 'a. 4 Strategi' }
+  { 
+    id: 'pengantar', 
+    group: '1. Dasar Berpikir Komputasional', 
+    title: 'a. Pengantar Computational Thinking',
+    icon: '🧠',
+    body: function() {
+      return `
+        <p class="lead">Berpikir komputasional (Computational Thinking) adalah cara menyelesaikan masalah dengan pendekatan yang terinspirasi dari ilmu komputer. Konsep ini diperkenalkan oleh <b>Jeannette Wing</b> (2006) yang menyatakan bahwa berpikir komputasional adalah keterampilan fundamental yang harus dimiliki semua orang, bukan hanya programmer.</p>
+        
+        <div class="figure">
+          <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:10px">
+            <span style="font-size:40px">🧩</span>
+            <span style="font-size:40px">🔍</span>
+            <span style="font-size:40px">🎯</span>
+            <span style="font-size:40px">📋</span>
+          </div>
+          <div style="font-size:14px;font-weight:600;color:var(--blue-dark)">Dekomposisi → Pola → Abstraksi → Algoritma</div>
+          <div class="figcap">Empat pilar berpikir komputasional</div>
+        </div>
+
+        <h3>📌 1. Dekomposisi (Decomposition)</h3>
+        <p>Memecah masalah kompleks menjadi bagian-bagian yang lebih kecil dan mudah dikelola.</p>
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Contoh Nyata:</strong> Saat ingin membuat kue, kita tidak langsung membuat kue utuh. Kita memecah menjadi: menyiapkan bahan, mencampur adonan, memanggang, dan menghias.
+          </div>
+        </div>
+
+        <h3>📌 2. Pengenalan Pola (Pattern Recognition)</h3>
+        <p>Mencari kesamaan, tren, atau pola dari data atau masalah yang dihadapi.</p>
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Contoh Nyata:</strong> Guru mendeteksi pola belajar siswa: siswa yang rajin mengerjakan PR cenderung mendapat nilai bagus.
+          </div>
+        </div>
+
+        <h3>📌 3. Abstraksi (Abstraction)</h3>
+        <p>Menyaring informasi penting dan mengabaikan detail yang tidak relevan.</p>
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Contoh Nyata:</strong> Peta metro tidak menampilkan semua jalan, hanya stasiun dan jalur kereta.
+          </div>
+        </div>
+
+        <h3>📌 4. Algoritma (Algorithm)</h3>
+        <p>Membuat langkah-langkah sistematis dan terurut untuk menyelesaikan masalah.</p>
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Contoh Nyata:</strong> Resep masakan adalah algoritma: langkah-langkah terurut untuk membuat makanan.
+          </div>
+        </div>
+
+        <div class="note gold">
+          <b>🧠 Referensi:</b> Wing, J.M. (2006). <i>Computational Thinking</i>. Communications of the ACM. | <i>Buku Informatika SMA Kelas XI</i> (Kemendikbud, 2021)
+        </div>
+      `;
+    }
+  },
+  { 
+    id: 'array', 
+    group: '2. Struktur Data - Array', 
+    title: 'b. Array (Larik)',
+    icon: '📊',
+    body: function() {
+      return `
+        <p class="lead"><b>Array</b> adalah kumpulan data dengan tipe data sama yang disimpan dalam satu variabel. Menggunakan <b>indeks</b> untuk mengakses data, indeks dimulai dari <b>0</b>.</p>
+        
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Analogi:</strong> Lemari dengan banyak laci bernomor. Laci nomor 0, 1, 2, dst. Setiap laci hanya bisa menyimpan satu jenis barang.
+          </div>
+        </div>
+
+        <h3>📊 Karakteristik Array</h3>
+        <ul class="points">
+          <li>Alamat memori berurutan (contiguous)</li>
+          <li>Ukuran statis (di kebanyakan bahasa)</li>
+          <li>Akses elemen O(1) via indeks</li>
+          <li>Indeks dimulai dari 0</li>
+        </ul>
+
+        <div class="array-visual">
+          <strong>Visualisasi Array 1 Dimensi</strong><br><br>
+          <span class="array-box">80 <span class="idx">[0]</span></span>
+          <span class="array-box">85 <span class="idx">[1]</span></span>
+          <span class="array-box highlight">90 <span class="idx">[2]</span></span>
+          <span class="array-box">75 <span class="idx">[3]</span></span>
+          <span class="array-box">88 <span class="idx">[4]</span></span>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">↑ akses arr[2] = 90</div>
+        </div>
+
+        <h3>Operasi Dasar Array</h3>
+        <ul class="points">
+          <li><b>Deklarasi:</b> Membuat wadah array</li>
+          <li><b>Inisialisasi:</b> Memberi nilai awal</li>
+          <li><b>Akses:</b> Membaca elemen via indeks (O(1))</li>
+          <li><b>Update:</b> Mengubah nilai elemen (O(1))</li>
+          <li><b>Traverse/Looping:</b> Menelusuri semua elemen</li>
+          <li><b>Searching:</b> Mencari data (Linear O(n), Binary O(log n))</li>
+        </ul>
+
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Contoh Kode (JavaScript):</strong><br>
+            <code>// Deklarasi & Inisialisasi<br>let nilai = [80, 85, 90, 75, 88];<br><br>// Akses elemen ke-2<br>console.log(nilai[2]); // Output: 90</code>
+          </div>
+        </div>
+
+        <h3>Contoh Kasus Array dalam Kehidupan Nyata</h3>
+        <ul class="points">
+          <li><b>📊 Daftar Nilai Siswa:</b> Menyimpan nilai ulangan harian dalam satu array</li>
+          <li><b>📅 Kalender:</b> Array 12 bulan, masing-masing berisi jumlah hari</li>
+          <li><b>🎮 High Score Game:</b> Menyimpan 10 skor tertinggi pemain</li>
+          <li><b>📱 Daftar Kontak HP:</b> Array berisi nama-nama kontak</li>
+        </ul>
+
+        <div class="array-visual">
+          <strong>Array 2D (Matriks 3x3)</strong><br><br>
+          <span class="array-box">1 <span class="idx">[0][0]</span></span>
+          <span class="array-box">2 <span class="idx">[0][1]</span></span>
+          <span class="array-box">3 <span class="idx">[0][2]</span></span><br>
+          <span class="array-box">4 <span class="idx">[1][0]</span></span>
+          <span class="array-box">5 <span class="idx">[1][1]</span></span>
+          <span class="array-box">6 <span class="idx">[1][2]</span></span><br>
+          <span class="array-box">7 <span class="idx">[2][0]</span></span>
+          <span class="array-box">8 <span class="idx">[2][1]</span></span>
+          <span class="array-box">9 <span class="idx">[2][2]</span></span>
+        </div>
+
+        <div class="note"><b>📚 Buku Referensi:</b> Cormen, T.H. et al. (2009). <i>Introduction to Algorithms</i>. MIT Press.</div>
+      `;
+    }
+  },
+  { 
+    id: 'linkedlist', 
+    group: '2. Struktur Data - Linked List', 
+    title: 'c. Linked List',
+    icon: '🔗',
+    body: function() {
+      return `
+        <p class="lead"><b>Linked List</b> adalah kumpulan <b>Node</b> yang saling terhubung. Setiap Node berisi <b>Data</b> dan <b>Pointer/Next</b> (alamat node berikutnya).</p>
+        
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Analogi:</strong> Kereta api. Setiap gerbong (Node) berisi penumpang (Data) dan sambungan ke gerbong berikutnya (Pointer).
+          </div>
+        </div>
+
+        <h3>Jenis-Jenis Linked List</h3>
+        <table>
+          <tr><th>Jenis</th><th>Deskripsi</th><th>Contoh Kasus</th></tr>
+          <tr><td><b>Singly</b></td><td>Satu arah (next saja)</td><td>Antrian cetak printer</td></tr>
+          <tr><td><b>Doubly</b></td><td>Dua arah (prev & next)</td><td>Music player next/prev</td></tr>
+          <tr><td><b>Circular</b></td><td>Tail kembali ke Head</td><td>Round-robin CPU scheduling</td></tr>
+        </table>
+
+        <div class="ll-visual">
+          <strong>Singly Linked List</strong><br><br>
+          <span class="ll-node head">HEAD</span>
+          <span class="ll-arrow">→</span>
+          <span class="ll-node">10 <span class="ptr">next</span></span>
+          <span class="ll-arrow">→</span>
+          <span class="ll-node">20 <span class="ptr">next</span></span>
+          <span class="ll-arrow">→</span>
+          <span class="ll-node tail">30 <span class="ptr">NULL</span></span>
+        </div>
+
+        <div class="note"><b>📚 Buku Referensi:</b> Goodrich, M.T. & Tamassia, R. (2014). <i>Data Structures and Algorithms in Java</i>. Wiley.</div>
+      `;
+    }
+  },
+  { 
+    id: 'stack', 
+    group: '3. Stack & Queue', 
+    title: 'a. Stack (LIFO)',
+    icon: '📚',
+    body: function() {
+      return `
+        <p class="lead"><b>Stack</b> adalah struktur data dengan prinsip <b>LIFO (Last In First Out)</b> — elemen terakhir yang dimasukkan adalah yang pertama keluar.</p>
+        
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Analogi:</strong> Tumpukan piring di kafetaria. Piring terakhir yang ditaruh di atas adalah piring pertama yang diambil.
+          </div>
+        </div>
+
+        <div class="array-visual">
+          <strong>Operasi Stack</strong><br><br>
+          <span class="array-box green">Push</span>
+          <span class="ll-arrow">→</span>
+          <span class="array-box highlight">Top</span>
+          <span class="array-box">Buku 2</span>
+          <span class="array-box">Buku 1</span>
+          <span style="display:block;font-size:12px;color:var(--muted);margin-top:4px">↑ Elemen teratas (Top) adalah yang terakhir masuk</span>
+        </div>
+
+        <h3>Operasi Dasar Stack</h3>
+        <ul class="points">
+          <li><b>Push:</b> Menambahkan elemen ke atas stack</li>
+          <li><b>Pop:</b> Menghapus elemen dari atas stack</li>
+          <li><b>Peek/Top:</b> Melihat elemen teratas tanpa menghapus</li>
+        </ul>
+
+        <h3>Contoh Penerapan Stack</h3>
+        <ul class="points">
+          <li><b>📱 Undo/Redo di Aplikasi:</b> Setiap aksi disimpan dalam stack</li>
+          <li><b>🌐 Navigasi Browser:</b> Tombol "Back" menggunakan stack</li>
+          <li><b>📞 Call Stack pada Program:</b> Menyimpan fungsi yang dipanggil</li>
+        </ul>
+      `;
+    }
+  },
+  { 
+    id: 'queue', 
+    group: '3. Stack & Queue', 
+    title: 'b. Queue (FIFO)',
+    icon: '🚶',
+    body: function() {
+      return `
+        <p class="lead"><b>Queue</b> adalah struktur data dengan prinsip <b>FIFO (First In First Out)</b> — elemen pertama yang masuk adalah yang pertama keluar.</p>
+        
+        <div class="figure">
+          <div style="background:#eef2f7;padding:12px;border-radius:8px;text-align:left">
+            <strong>📌 Analogi:</strong> Antrian di kasir supermarket. Orang pertama yang mengantri adalah yang pertama dilayani.
+          </div>
+        </div>
+
+        <div class="array-visual">
+          <strong>Operasi Queue</strong><br><br>
+          <span class="array-box green">Front</span>
+          <span class="array-box">Andi</span>
+          <span class="array-box">Budi</span>
+          <span class="array-box highlight">Rear</span>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px">↑ Front (depan) adalah elemen pertama yang keluar</div>
+        </div>
+
+        <h3>Operasi Dasar Queue</h3>
+        <ul class="points">
+          <li><b>Enqueue:</b> Menambahkan elemen ke belakang queue</li>
+          <li><b>Dequeue:</b> Menghapus elemen dari depan queue</li>
+          <li><b>Peek/Front:</b> Melihat elemen depan tanpa menghapus</li>
+        </ul>
+
+        <h3>Contoh Penerapan Queue</h3>
+        <ul class="points">
+          <li><b>🏥 Antrian Pasien di Klinik:</b> Pasien pertama datang dilayani pertama</li>
+          <li><b>🖨️ Print Spooler:</b> Dokumen yang dikirim ke printer diantri</li>
+          <li><b>🎫 PPDB Sekolah:</b> Pendaftaran online menggunakan antrian</li>
+        </ul>
+      `;
+    }
+  },
+  { 
+    id: 'tree', 
+    group: '4. Tree & Graph', 
+    title: 'a. Tree & Graph',
+    icon: '🌳',
+    body: function() {
+      return `
+        <p class="lead"><b>Tree</b> adalah struktur data hierarkis dengan node parent-child. <b>Graph</b> adalah struktur data jaringan yang terdiri dari node (vertex) yang terhubung oleh edge (sisi).</p>
+
+        <div class="grid2">
+          <div class="tile" style="text-align:center">
+            <span style="font-size:48px">🌳</span>
+            <h4>Tree</h4>
+            <p style="font-size:13px;color:var(--muted)">Struktur hierarkis, satu root, tidak ada siklus</p>
+          </div>
+          <div class="tile" style="text-align:center">
+            <span style="font-size:48px">🔗</span>
+            <h4>Graph</h4>
+            <p style="font-size:13px;color:var(--muted)">Jaringan node, bisa memiliki siklus</p>
+          </div>
+        </div>
+
+        <div class="ll-visual">
+          <strong>Tree Structure</strong><br><br>
+          <span class="tree-node" style="background:var(--gold);color:#000">Root</span><br>
+          <span class="tree-node">Child 1</span>
+          <span class="tree-node">Child 2</span><br>
+          <span class="tree-node" style="font-size:11px">Leaf 1.1</span>
+          <span class="tree-node" style="font-size:11px">Leaf 1.2</span>
+          <span class="tree-node" style="font-size:11px">Leaf 2.1</span>
+        </div>
+
+        <h3>Perbandingan Tree vs Graph</h3>
+        <table>
+          <tr><th>Aspek</th><th>Tree</th><th>Graph</th></tr>
+          <tr><td>Struktur</td><td>Hierarkis</td><td>Jaringan</td></tr>
+          <tr><td>Root</td><td>Memiliki satu root</td><td>Tidak harus</td></tr>
+          <tr><td>Siklus</td><td>Tidak ada</td><td>Bisa ada</td></tr>
+          <tr><td>Contoh</td><td>Sistem folder, Silsilah keluarga</td><td>Peta jalan, Media sosial</td></tr>
+        </table>
+
+        <div class="note"><b>📚 Buku Referensi:</b> Knuth, D.E. (1997). <i>The Art of Computer Programming</i>. Addison-Wesley.</div>
+      `;
+    }
+  },
+  { 
+    id: 'strategi', 
+    group: '5. Strategi Algoritmik', 
+    title: 'a. 4 Strategi Algoritmik',
+    icon: '🎯',
+    body: function() {
+      return `
+        <p class="lead">Strategi algoritmik adalah pendekatan umum untuk merancang algoritma dalam menyelesaikan masalah komputasional. Terdapat <b>4 strategi utama</b> yang sering digunakan:</p>
+
+        <div class="grid2">
+          <div class="tile" style="border-left:4px solid #e05252">
+            <span style="font-size:28px">🔍</span>
+            <h4>1. Brute Force</h4>
+            <p style="font-size:13px;color:var(--muted)">Mencoba semua kemungkinan solusi</p>
+            <div class="figure" style="margin-top:8px;padding:8px">
+              <span style="font-size:12px">📌 Mencoba semua kunci untuk membuka gembok</span>
+            </div>
+          </div>
+          <div class="tile" style="border-left:4px solid var(--blue)">
+            <span style="font-size:28px">⚡</span>
+            <h4>2. Divide and Conquer</h4>
+            <p style="font-size:13px;color:var(--muted)">Memecah masalah menjadi bagian kecil</p>
+            <div class="figure" style="margin-top:8px;padding:8px">
+              <span style="font-size:12px">📌 Binary Search di kamus</span>
+            </div>
+          </div>
+          <div class="tile" style="border-left:4px solid var(--orange)">
+            <span style="font-size:28px">🎯</span>
+            <h4>3. Greedy</h4>
+            <p style="font-size:13px;color:var(--muted)">Memilih langkah terbaik saat ini</p>
+            <div class="figure" style="margin-top:8px;padding:8px">
+              <span style="font-size:12px">📌 Memilih permen terbesar di toples</span>
+            </div>
+          </div>
+          <div class="tile" style="border-left:4px solid var(--green)">
+            <span style="font-size:28px">🧠</span>
+            <h4>4. Dynamic Programming</h4>
+            <p style="font-size:13px;color:var(--muted)">Menyimpan hasil sub-masalah</p>
+            <div class="figure" style="margin-top:8px;padding:8px">
+              <span style="font-size:12px">📌 Menghafal hasil perkalian</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Perbandingan Kompleksitas</h3>
+        <table>
+          <tr><th>Strategi</th><th>Kompleksitas</th><th>Contoh</th></tr>
+          <tr><td>Brute Force</td><td>O(n²) / O(2ⁿ)</td><td>Linear Search</td></tr>
+          <tr><td>Divide & Conquer</td><td>O(n log n)</td><td>Merge Sort, Binary Search</td></tr>
+          <tr><td>Greedy</td><td>O(n) / O(n log n)</td><td>Koin minimal, Dijkstra</td></tr>
+          <tr><td>Dynamic Programming</td><td>O(n²) / O(n·m)</td><td>Knapsack, Fibonacci</td></tr>
+        </table>
+
+        <div class="note gold"><b>🧠 Referensi:</b> <i>Introduction to Algorithms</i> (Cormen, 2009) | <i>Algorithm Design</i> (Kleinberg & Tardos, 2006)</div>
+      `;
+    }
+  }
 ];
 
+// ==================== PAGES ====================
 var PAGES = [
-  { id: 'beranda', t: 'Beranda' },
-  { id: 'petunjuk', t: 'Petunjuk' },
+  { id: 'beranda', t: '🏠 Beranda' },
+  { id: 'petunjuk', t: '📖 Petunjuk' },
   { id: 'lab', t: '🧪 Lab' },
-  { id: 'tentang', t: 'Tentang' },
-  { id: 'riwayat', t: 'Riwayat Skor' },
-  { id: 'quiz', t: '📝 Quiz 15' },
+  { id: 'tentang', t: 'ℹ️ Tentang' },
+  { id: 'riwayat', t: '📊 Riwayat' },
+  { id: 'quiz', t: '📝 Quiz' },
   { id: 'proyek', t: '📁 Proyek' }
 ];
 
@@ -421,9 +796,9 @@ function buildNav() {
   for (var m = 0; m < MATERI.length; m++) {
     if (MATERI[m].group !== grp) { grp = MATERI[m].group; h += '<div class="sb-title">' + grp + '</div>'; }
     var done = prog[MATERI[m].id] ? 'done' : '';
-    h += '<button class="navitem sub ' + done + '" data-id="' + MATERI[m].id + '" onclick="go(\'' + MATERI[m].id + '\')"><span class="dot"></span>' + MATERI[m].title + '</button>';
+    h += '<button class="navitem sub ' + done + '" data-id="' + MATERI[m].id + '" onclick="go(\'' + MATERI[m].id + '\')"><span class="dot"></span>' + MATERI[m].icon + ' ' + MATERI[m].title + '</button>';
   }
-  h += '<div class="sb-title">Evaluasi</div><button class="navitem" data-id="final" onclick="go(\'final\')"><span class="dot"></span>Kuis Akhir Bab</button>';
+  h += '<div class="sb-title">Evaluasi</div><button class="navitem" data-id="final" onclick="go(\'final\')"><span class="dot"></span>🏁 Kuis Akhir</button>';
   nav.innerHTML = h;
   updateProgress();
 }
@@ -442,7 +817,7 @@ function toggleSidebar() {
   if (s) s.classList.toggle('open');
 }
 
-// ==================== FUNGSI GO ====================
+// ==================== GO ====================
 function go(id) {
   var items = document.querySelectorAll('.navitem');
   for (var i = 0; i < items.length; i++) {
@@ -467,7 +842,7 @@ function go(id) {
   renderMateri(id);
 }
 
-// ==================== RENDER PAGES ====================
+// ==================== RENDER HOME ====================
 function renderHome() {
   var main = document.getElementById('main');
   if (!main) return;
@@ -479,22 +854,22 @@ function renderHome() {
   var materiHtml = '';
   for (var m = 0; m < MATERI.length; m++) {
     var doneClass = prog[MATERI[m].id] ? '' : 'blue';
-    var status = prog[MATERI[m].id] ? 'Selesai' : 'Belum';
-    materiHtml += '<button class="tile" style="text-align:left" onclick="go(\'' + MATERI[m].id + '\')"><span class="badge ' + doneClass + '">' + status + '</span><div style="font-weight:700;margin-top:8px">' + MATERI[m].title + '</div><div style="font-size:12px;color:var(--muted)">' + MATERI[m].group + '</div></button>';
+    var status = prog[MATERI[m].id] ? '✅ Selesai' : '📖 Belum';
+    materiHtml += '<button class="tile" style="text-align:left" onclick="go(\'' + MATERI[m].id + '\')"><span class="icon">' + MATERI[m].icon + '</span><span class="badge ' + doneClass + '">' + status + '</span><div style="font-weight:700;margin-top:6px">' + MATERI[m].title + '</div><div style="font-size:12px;color:var(--muted)">' + MATERI[m].group + '</div></button>';
   }
   
   main.innerHTML = `
-    <div class="card" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue) 60%,var(--green));color:#fff;border:0">
-      <span class="badge orange">Informatika &middot; Kelas XI</span>
-      <h2 style="color:#fff;margin-top:10px;font-size:28px">Berpikir Komputasional</h2>
-      <p style="opacity:.9;font-size:15px;margin-top:6px">Modul interaktif untuk memahami konsep berpikir komputasional, struktur data, dan strategi algoritmik.</p>
+    <div class="card hero-card">
+      <span class="badge" style="background:rgba(255,255,255,.2);color:#fff">Informatika · Kelas XI</span>
+      <h2 style="color:#fff;margin-top:8px;font-size:28px">🧠 Berpikir Komputasional</h2>
+      <p style="opacity:.9;font-size:15px;margin-top:4px">Modul interaktif untuk memahami konsep berpikir komputasional, struktur data, dan strategi algoritmik dengan contoh nyata.</p>
       <div class="row" style="margin-top:16px">
-        <button class="btn orange" onclick="go('pengantar')">Mulai Belajar</button>
+        <button class="btn orange" onclick="go('pengantar')">🚀 Mulai Belajar</button>
         <button class="btn ghost" onclick="go('lab')">🧪 Lab</button>
         <button class="btn ghost" onclick="go('quiz')">📝 Quiz</button>
       </div>
     </div>
-    <div class="card"><h3 style="margin-top:0">Identitas Siswa</h3>
+    <div class="card"><h3 style="margin-top:0">👤 Identitas Siswa</h3>
       <div class="grid2">
         <div class="tile"><b>Nama</b><br><span style="color:var(--muted)">${s}</span></div>
         <div class="tile"><b>Kelas</b><br><span style="color:var(--muted)">${g}</span></div>
@@ -502,31 +877,58 @@ function renderHome() {
         <div class="tile"><b>Mapel</b><br><span style="color:var(--muted)">Informatika</span></div>
       </div>
     </div>
-    <div class="card"><h3 style="margin-top:0">Peta Materi</h3>
+    <div class="card"><h3 style="margin-top:0">📚 Peta Materi</h3>
       <div class="grid2">${materiHtml}</div>
-      <div class="note">Progres: <b>${done}/${MATERI.length}</b> materi.</div>
+      <div class="note">Progres: <b>${done}/${MATERI.length}</b> materi selesai.</div>
     </div>`;
 }
 
+// ==================== RENDER MATERI ====================
+function renderMateri(id) {
+  var main = document.getElementById('main');
+  if(!main) return;
+  var m = null;
+  for (var i = 0; i < MATERI.length; i++) {
+    if (MATERI[i].id === id) { m = MATERI[i]; break; }
+  }
+  if (!m) { renderHome(); return; }
+  
+  main.innerHTML = `
+    <div class="card">
+      <span class="eyebrow">${m.group}</span>
+      <h2>${m.icon} ${m.title}</h2>
+      ${m.body()}
+    </div>
+    <div class="card" id="quizCard">
+      <span class="eyebrow">📝 Latihan</span>
+      <h2>Kuis: ${m.title}</h2>
+      <p class="lead">Jawab soal berikut lalu tekan Periksa Jawaban.</p>
+      <div id="quizBody"></div>
+    </div>
+  `;
+  renderQuiz(bank[id] || [], 'Kuis ' + m.title, id);
+}
+
+// ==================== RENDER LAINNYA ====================
 function renderPetunjuk() {
   var main = document.getElementById('main');
   if(!main) return;
-  main.innerHTML = `<div class="card"><span class="eyebrow">Panduan</span><h2>Petunjuk</h2>
-    <ul class="points"><li>Isi absensi sebelum mulai.</li><li>Pilih materi dari menu.</li><li>Kerjakan kuis setiap materi.</li><li>Kunjungi Lab Interaktif.</li></ul>
-    <div class="note">Skor otomatis ke spreadsheet guru.</div>
-    <div class="note warn">Gunakan perangkat yang sama.</div></div>`;
+  main.innerHTML = `<div class="card"><span class="eyebrow">📖 Panduan</span><h2>Petunjuk Penggunaan</h2>
+    <ul class="points"><li>📌 Isi absensi sebelum mulai belajar</li><li>📌 Pilih materi dari menu samping</li><li>📌 Baca materi dengan contoh nyata dan gambar</li><li>📌 Kerjakan kuis di setiap akhir materi</li><li>📌 Kunjungi "Lab Interaktif" untuk visualisasi</li><li>📌 Kerjakan "Quiz 15 Soal" untuk evaluasi</li></ul>
+    <div class="note">📤 Skor otomatis dikirim ke spreadsheet guru.</div>
+    <div class="note warn">💾 Gunakan perangkat yang sama agar data tetap tersimpan.</div></div>`;
 }
 
 function renderTentang() {
   var main = document.getElementById('main');
   if(!main) return;
-  main.innerHTML = `<div class="card"><span class="eyebrow">Profil</span><h2>Tentang</h2>
+  main.innerHTML = `<div class="card"><span class="eyebrow">ℹ️ Profil</span><h2>Tentang Modul</h2>
     <div class="row" style="margin-top:14px;align-items:center">
-      <div class="avatar" style="width:88px;height:88px;background:var(--blue-soft);color:var(--blue);font-size:11px" id="aboutPhoto">FOTO GURU</div>
+      <div class="avatar" style="width:80px;height:80px;background:var(--blue-soft);color:var(--blue);font-size:12px" id="aboutPhoto">FOTO GURU</div>
       <div><div style="font-size:18px;font-weight:800">${cfg.teacher}</div><div style="color:var(--muted)">${cfg.role}</div><div style="color:var(--muted)">${cfg.classes}</div></div>
-      <div class="avatar" style="width:88px;height:88px;background:var(--green-soft);color:var(--green);font-size:11px" id="aboutLogo">LOGO</div>
+      <div class="avatar" style="width:80px;height:80px;background:var(--green-soft);color:var(--green);font-size:12px" id="aboutLogo">LOGO</div>
     </div>
-    <p class="lead">Modul interaktif SMA Kelas XI - Berpikir Komputasional.</p>
+    <p class="lead">Modul interaktif untuk SMA Kelas XI dengan materi Computational Thinking, Array, Linked List, Stack, Queue, Tree, Graph, dan Strategi Algoritmik.</p>
     <div class="note">${cfg.school}</div></div>`;
   applyPhotos();
 }
@@ -538,7 +940,7 @@ function renderRiwayat() {
   for (var i = 0; i < scores.length; i++) {
     if (student && scores[i].name === student.name) mine.push(scores[i]);
   }
-  var html = '<div class="card"><span class="eyebrow">Nilai</span><h2>Riwayat Skor</h2>';
+  var html = '<div class="card"><span class="eyebrow">📊 Nilai</span><h2>Riwayat Skor</h2>';
   if(mine.length) {
     html += '<div class="tblwrap"><table><tr><th>Waktu</th><th>Judul</th><th>Benar</th><th>Salah</th><th>Nilai</th></tr>';
     for (var s = mine.length - 1; s >= 0; s--) {
@@ -548,9 +950,9 @@ function renderRiwayat() {
     var total = 0;
     for (var t = 0; t < mine.length; t++) total += mine[t].score;
     var avg = Math.round(total / mine.length);
-    html += '<div style="margin-top:10px;font-size:13px;color:var(--muted)">Total: '+mine.length+' kuis | Rata-rata: '+avg+'% '+(cfg.sheetUrl?'| 📤 Auto-sync aktif':'| ⚠️ Spreadsheet belum terhubung')+'</div>';
+    html += '<div style="margin-top:10px;font-size:13px;color:var(--muted)">📊 Total: '+mine.length+' kuis | Rata-rata: '+avg+'% '+(cfg.sheetUrl?'📤 Auto-sync aktif':'⚠️ Spreadsheet belum terhubung')+'</div>';
   } else {
-    html += '<div class="note warn">Belum ada kuis yang dikerjakan.</div>';
+    html += '<div class="note warn">📝 Belum ada kuis yang dikerjakan.</div>';
   }
   html += '</div>';
   main.innerHTML = html;
@@ -582,7 +984,7 @@ function renderQuizPage() {
   if(!main) return;
   
   var html = `<div class="card"><span class="eyebrow">📝 Evaluasi</span><h2>Quiz 15 Soal</h2>
-    <p class="lead">Jawab semua 15 soal. Nilai > 80 dapat sertifikat.</p>
+    <p class="lead">Jawab semua 15 soal. Nilai > 80 dapat sertifikat 🏅</p>
     <div id="quizContainer"></div>
     <div class="row mt-12">
       <button class="btn orange" id="submitQuizBtn">✅ Submit Quiz</button>
@@ -590,9 +992,9 @@ function renderQuizPage() {
     </div>
     <div id="quizResult" class="mt-12" style="font-weight:700;font-size:1.2rem;"></div>
     <div id="sertifikatArea" class="sertifikat-area hidden">
-      <h3>🏅 Sertifikat Kelulusan</h3>
-      <p>Selamat! Anda telah lulus Quiz Berpikir Komputasional dengan nilai > 80.</p>
-      <button class="btn" id="cetakSertifikatBtn" style="background:var(--gold);color:var(--blue-dark);">🖨️ Cetak Sertifikat</button>
+      <h3>🏅 Sertifikat</h3>
+      <p>Selamat! Anda lulus dengan nilai > 80.</p>
+      <button class="btn" id="cetakSertifikatBtn">🖨️ Cetak</button>
     </div>
   </div>`;
   main.innerHTML = html;
@@ -638,7 +1040,6 @@ function renderQuizOptions() {
 }
 
 function submitQuiz() {
-  // Cek semua soal sudah dijawab
   for (var i = 0; i < userAnswers.length; i++) {
     if (userAnswers[i] === -1) {
       toast('⚠️ Masih ada soal yang belum dijawab!');
@@ -669,7 +1070,6 @@ function submitQuiz() {
     resultEl.innerHTML = '📊 Skor: ' + benar + '/' + total + ' (' + nilai + '%) — ' + (nilai >= 80 ? '🎉 Lulus!' : '📚 Belajar lagi!');
   }
   
-  // Simpan skor
   if (student) {
     var rec = {
       ts: new Date().toLocaleString('id-ID'),
@@ -703,7 +1103,7 @@ function submitQuiz() {
   if (sertEl) {
     if (nilai > 80) {
       sertEl.classList.remove('hidden');
-      toast('🎉 Selamat! Anda lulus dengan nilai > 80!');
+      toast('🎉 Selamat! Anda lulus!');
     } else {
       sertEl.classList.add('hidden');
       toast('📚 Nilai di bawah 80. Coba lagi!');
@@ -723,26 +1123,22 @@ function resetQuiz() {
 
 function cetakSertifikat() {
   var nama = student ? student.name : '___________________';
-  var win = window.open('', '_blank', 'width=600, height=500');
+  var win = window.open('', '_blank', 'width=600,height=500');
   win.document.write(`
     <html><head><title>Sertifikat</title>
     <style>
       body{font-family:sans-serif;text-align:center;padding:40px;background:#f5f0e1;border:8px solid #C5A028;}
-      h1{color:#0B4D2E;font-size:2.5rem;border-bottom:4px solid #C5A028;padding-bottom:10px;}
-      .gold{color:#C5A028;} .hijau{color:#0B4D2E;}
+      h1{color:#0B4D2E;font-size:2.5rem;border-bottom:4px solid #C5A028;}
       .nama{font-size:2rem;color:#0B4D2E;border-bottom:2px dashed #C5A028;display:inline-block;padding:0 40px;margin:20px 0;}
     </style>
     </head><body>
     <h1>🏅 Sertifikat</h1>
     <p style="font-size:1.2rem;">Diberikan kepada:</p>
     <h2 class="nama">${nama}</h2>
-    <p style="font-size:1.1rem;">Atas keberhasilan menyelesaikan Quiz Bab 1</p>
-    <p style="font-size:1.3rem;font-weight:700;color:#0B4D2E;">Berpikir Komputasional</p>
-    <p style="font-size:1.1rem;">dengan nilai <span style="color:#C5A028;font-weight:700;">> 80</span></p>
-    <p style="margin-top:30px;font-size:0.9rem;color:#0B4D2E;">SMA Islam Al-Mizan Jatiwangi</p>
-    <p style="font-size:0.8rem;color:#5a6a7a;">Ramdan Ahmad Dijaya, S.Pd. | Guru Informatika</p>
-    <p style="margin-top:20px;font-size:0.7rem;color:#999;">Dicetak pada: ${new Date().toLocaleDateString('id-ID')}</p>
-    <script>window.print();<\/script>
+    <p>Atas keberhasilan menyelesaikan Quiz Berpikir Komputasional dengan nilai > 80.</p>
+    <p style="margin-top:30px;">${cfg.school}</p>
+    <p style="font-size:0.8rem;">${cfg.teacher} | ${cfg.role}</p>
+    <script>window.print();</script>
     </body></html>
   `);
   win.document.close();
@@ -754,15 +1150,15 @@ function renderProyekPage() {
   if(!main) return;
   main.innerHTML = `
     <div class="card"><span class="eyebrow">📁 Proyek</span><h2>Proyek Mini - Perpustakaan</h2>
-      <p class="lead">Rancang sistem manajemen perpustakaan.</p>
+      <p class="lead">Rancang sistem manajemen perpustakaan dengan memilih struktur data dan algoritma yang tepat.</p>
       <div class="card" style="border:2px solid var(--gold);">
-        <h4>📚 Sistem Manajemen</h4>
+        <h4>📚 Sistem Manajemen Perpustakaan</h4>
         <div class="row">
           <select id="proyekSD"><option value="array">Array</option><option value="stack">Stack</option><option value="queue">Queue</option><option value="tree" selected>Tree</option><option value="graph">Graph</option></select>
           <select id="proyekAlgo"><option value="bruteforce">Brute</option><option value="divideconquer" selected>Divide</option><option value="greedy">Greedy</option><option value="dp">DP</option></select>
-          <button class="btn orange" id="proyekSubmit">Submit</button>
+          <button class="btn orange" id="proyekSubmit">📤 Submit</button>
         </div>
-        <div id="proyekFeedback" class="mt-12"></div>
+        <div id="proyekFeedback" class="mt-12" style="font-weight:600;"></div>
       </div>
     </div>`;
   var btn = document.getElementById('proyekSubmit');
@@ -770,21 +1166,8 @@ function renderProyekPage() {
     var sd = document.getElementById('proyekSD').value;
     var algo = document.getElementById('proyekAlgo').value;
     var fb = document.getElementById('proyekFeedback');
-    var msg = (sd === 'tree' && (algo === 'divideconquer' || algo === 'greedy')) ? '✅ Kombinasi tepat!' : '⚠️ Pertimbangkan Tree + Divide & Conquer.';
+    var msg = (sd === 'tree' && (algo === 'divideconquer' || algo === 'greedy')) ? '✅ Kombinasi tepat! Tree + Divide & Conquer sangat cocok.' : '⚠️ Pertimbangkan Tree + Divide & Conquer.';
     if(fb) fb.innerHTML = msg;
-    if(student) {
-      sendToSheet('proyek', {
-        timestamp: new Date().toLocaleString('id-ID'),
-        nama: student.name,
-        kelas: student.grade,
-        alamat: student.address,
-        mapel: student.subject,
-        judul_proyek: 'Sistem Manajemen Perpustakaan',
-        struktur_data: sd,
-        algoritma: algo,
-        feedback: msg
-      }, null);
-    }
     toast('📁 Rancangan disubmit!');
   };
 }
@@ -795,20 +1178,20 @@ function renderLab() {
   if(!main) return;
   main.innerHTML = `
     <div class="card"><span class="eyebrow">🧪 Lab</span><h2>Lab Interaktif</h2>
-    <p class="lead">Visualisasi struktur data.</p>
+    <p class="lead">Visualisasi struktur data secara langsung.</p>
     <div class="lab-grid">
       <div class="lab-card"><h4>📚 Stack</h4><div class="stack-area" id="stackArea"></div>
-        <div class="row"><button class="btn btn-sm" id="pushStack">Push</button><button class="btn btn-outline btn-sm" id="popStack">Pop</button><span id="stackStatus">0 item</span></div>
+        <div class="row"><button class="btn btn-sm" id="pushStack">⬆ Push</button><button class="btn btn-outline btn-sm" id="popStack">⬇ Pop</button><span id="stackStatus">0 item</span></div>
       </div>
       <div class="lab-card"><h4>🚶 Queue</h4><div class="queue-area" id="queueArea"></div>
-        <div class="row"><button class="btn btn-sm" id="enqueueQueue">Enqueue</button><button class="btn btn-outline btn-sm" id="dequeueQueue">Dequeue</button><span id="queueStatus">0 item</span></div>
+        <div class="row"><button class="btn btn-sm" id="enqueueQueue">⬅ Enqueue</button><button class="btn btn-outline btn-sm" id="dequeueQueue">➡ Dequeue</button><span id="queueStatus">0 item</span></div>
       </div>
-      <div class="lab-card"><h4>🌳 Tree</h4><div class="tree-area" id="treeArea"></div><button class="btn btn-sm" id="addTree">+ Node</button></div>
-      <div class="lab-card"><h4>🔗 Graph</h4><div class="graph-area" id="graphArea"></div><button class="btn btn-sm" id="addGraph">+ Node</button></div>
+      <div class="lab-card"><h4>🌳 Tree</h4><div class="tree-area" id="treeArea"></div><button class="btn btn-sm" id="addTree">➕ Tambah</button></div>
+      <div class="lab-card"><h4>🔗 Graph</h4><div class="graph-area" id="graphArea"></div><button class="btn btn-sm" id="addGraph">➕ Tambah</button></div>
     </div>
     <div class="card" style="margin-top:20px"><h3>🧪 Simulator</h3>
-      <div class="simulasi-algo"><h5>💰 Koin</h5><div class="row"><button class="btn btn-sm" id="bruteCoin">Brute</button><button class="btn btn-gold btn-sm" id="greedyCoin">Greedy</button><span id="coinResult">Klik</span></div><div id="coinSteps" class="step-list"></div></div>
-      <div class="simulasi-algo"><h5>🔎 Binary Search</h5><button class="btn btn-sm" id="simulasiBinary">Jalankan</button><div id="binarySteps" class="step-list"></div></div>
+      <div class="simulasi-algo"><h5>💰 Kembalian Koin</h5><div class="row"><button class="btn btn-sm" id="bruteCoin">🔍 Brute</button><button class="btn btn-gold btn-sm" id="greedyCoin">🎯 Greedy</button><span id="coinResult">Klik</span></div><div id="coinSteps" class="step-list"></div></div>
+      <div class="simulasi-algo"><h5>🔎 Binary Search</h5><button class="btn btn-sm" id="simulasiBinary">▶ Jalankan</button><div id="binarySteps" class="step-list"></div></div>
     </div>
     <div class="card"><h3>🧠 Decision Maker</h3><div id="decisionContainer"></div><button class="btn btn-gold" id="checkDecision">✅ Cek</button><div id="decisionFeedback"></div></div>
   `;
@@ -819,6 +1202,7 @@ function renderLab() {
 
 // ==================== LAB VISUALS ====================
 function initLabVisuals() {
+  // Stack
   var stackArea = document.getElementById('stackArea');
   var stackStatus = document.getElementById('stackStatus');
   function renderStack() {
@@ -849,6 +1233,7 @@ function initLabVisuals() {
     toast('📤 Pop');
   };
   
+  // Queue
   var queueArea = document.getElementById('queueArea');
   var queueStatus = document.getElementById('queueStatus');
   function renderQueue() {
@@ -880,6 +1265,7 @@ function initLabVisuals() {
     toast('🚶 Dequeue: ' + removed);
   };
   
+  // Tree
   var treeArea = document.getElementById('treeArea');
   function renderTree() {
     if(!treeArea) return;
@@ -899,6 +1285,7 @@ function initLabVisuals() {
     toast('🌳 + node');
   };
   
+  // Graph
   var graphArea = document.getElementById('graphArea');
   function renderGraph() {
     if(!graphArea) return;
@@ -1015,22 +1402,80 @@ function initDecisionMaker() {
   };
 }
 
-// ==================== RENDER MATERI ====================
-function renderMateri(id) {
-  var main = document.getElementById('main');
-  if(!main) return;
-  var m = null;
-  for (var i = 0; i < MATERI.length; i++) {
-    if (MATERI[i].id === id) { m = MATERI[i]; break; }
+// ==================== QUIZ ENGINE (UNTUK KUIS MATERI) ====================
+var bank = loadSafe(K.bank, {});
+var answers = {};
+
+function renderQuiz(qs, title, id) {
+  var quizBody = document.getElementById('quizBody');
+  if (!quizBody) return;
+  answers = {};
+  if (!qs || qs.length === 0) {
+    quizBody.innerHTML = '<div class="note warn">📝 Belum ada soal. Guru bisa menambahkan di Mode Guru.</div>';
+    return;
   }
-  if (!m) { renderHome(); return; }
-  main.innerHTML = '<div class="card"><span class="eyebrow">' + m.group + '</span><h2>' + m.title + '</h2><p class="lead">Materi ' + m.title + ' sedang dalam pengembangan.</p></div>';
+  var html = '';
+  for (var i = 0; i < qs.length; i++) {
+    html += '<div class="q" id="q' + i + '"><p class="qt">' + (i+1) + '. ' + qs[i].q + '</p>';
+    for (var j = 0; j < qs[i].o.length; j++) {
+      html += '<div class="opt" data-q="' + i + '" data-o="' + j + '" onclick="pick(' + i + ',' + j + ')"><b>' + String.fromCharCode(65+j) + '.</b><span>' + qs[i].o[j] + '</span></div>';
+    }
+    html += '<div class="expl hidden" id="e' + i + '"></div></div>';
+  }
+  html += '<button class="btn orange" onclick="checkQuiz(' + JSON.stringify(qs).replace(/'/g, "&#39;") + ', \'' + title + '\', \'' + id + '\')">✅ Periksa Jawaban</button><div id="result" style="margin-top:16px"></div>';
+  quizBody.innerHTML = html;
+}
+
+function pick(i,j) {
+  if (document.getElementById('result') && document.getElementById('result').dataset.done) return;
+  answers[i] = j;
+  var opts = document.querySelectorAll('.opt[data-q="' + i + '"]');
+  for (var o = 0; o < opts.length; o++) {
+    opts[o].classList.toggle('sel', parseInt(opts[o].dataset.o) === j);
+  }
+}
+
+function checkQuiz(qs, title, id) {
+  var res = document.getElementById('result');
+  if (!res) return;
+  if (Object.keys(answers).length < qs.length) {
+    toast('⚠️ Masih ada soal yang belum dijawab!');
+    return;
+  }
+  var correct = 0;
+  for (var i = 0; i < qs.length; i++) {
+    var opts = document.querySelectorAll('.opt[data-q="' + i + '"]');
+    for (var o = 0; o < opts.length; o++) {
+      var j = parseInt(opts[o].dataset.o);
+      opts[o].classList.remove('sel');
+      if (j === qs[i].a) opts[o].classList.add('ok');
+      else if (j === answers[i]) opts[o].classList.add('no');
+    }
+    if (answers[i] === qs[i].a) correct++;
+    else {
+      var e = document.getElementById('e' + i);
+      if (e) { e.classList.remove('hidden'); e.innerHTML = '<b>Pembahasan:</b> ' + qs[i].e + ' <br><b>Jawaban benar: ' + String.fromCharCode(65+qs[i].a) + '</b>'; }
+    }
+  }
+  var wrong = qs.length - correct;
+  var score = Math.round(correct / qs.length * 100);
+  res.dataset.done = '1';
+  res.innerHTML = '<div class="scorebox"><div class="num">' + score + '</div><div style="font-weight:700;margin-top:6px">' + correct + ' benar · ' + wrong + ' salah dari ' + qs.length + ' soal</div><div style="font-size:13px;color:var(--muted);margin-top:4px">' + (score >= 80 ? '🌟 Luar biasa!' : score >= 60 ? '📖 Cukup baik, pelajari lagi.' : '📚 Ayo ulangi materi.') + '</div><div id="sendStatus" style="font-size:12.5px;margin-top:10px"></div></div>';
+  var rec = { ts: new Date().toLocaleString('id-ID'), name: student ? student.name : '-', grade: student ? student.grade : '-', address: student ? student.address : '-', subject: 'Informatika', title: title, correct: correct, wrong: wrong, score: score };
+  scores.push(rec);
+  saveSafe(K.scores, scores);
+  if (id !== 'final') { prog[id] = true; saveSafe(K.prog, prog); buildNav(); }
+  sendToSheet('skor', { timestamp: rec.ts, nama: rec.name, kelas: rec.grade, alamat: rec.address, mapel: rec.subject, judul_kuis: title, benar: correct, salah: wrong, nilai: score }, document.getElementById('sendStatus'));
 }
 
 function renderFinal() {
   var main = document.getElementById('main');
   if(!main) return;
-  main.innerHTML = '<div class="card"><span class="eyebrow">Evaluasi</span><h2>Kuis Akhir Bab</h2><p class="lead">Soal acak dari semua materi.</p></div>';
+  main.innerHTML = '<div class="card"><span class="eyebrow">🏁 Evaluasi</span><h2>Kuis Akhir Bab</h2><p class="lead">Soal acak dari semua materi.</p><div id="quizBody"></div></div>';
+  var all = [];
+  for (var k in bank) { for (var q = 0; q < bank[k].length; q++) { all.push(bank[k][q]); } }
+  var pick = all.sort(function() { return Math.random() - 0.5; }).slice(0, Math.min(10, all.length));
+  renderQuiz(pick, 'Kuis Akhir Bab - Berpikir Komputasional', 'final');
 }
 
 // ==================== MODE GURU ====================
@@ -1038,7 +1483,7 @@ function openTeacher() {
   var w = document.createElement('div');
   w.className = 'overlay';
   w.id = 'tOverlay';
-  w.innerHTML = '<div class="modal"><h2>Mode Guru</h2><p class="lead">Masukkan PIN</p><div class="field"><label>PIN</label><input id="pinIn" type="password" maxlength="8" placeholder="****"></div><div class="row"><button class="btn" onclick="checkPin()">Masuk</button><button class="btn ghost" onclick="closeT()">Batal</button></div><p style="font-size:11.5px;color:var(--muted);margin-top:10px">PIN: 1234</p></div>';
+  w.innerHTML = '<div class="modal"><h2>⚙️ Mode Guru</h2><p class="lead">Masukkan PIN</p><div class="field"><label>PIN</label><input id="pinIn" type="password" maxlength="8" placeholder="****"></div><div class="row"><button class="btn" onclick="checkPin()">🔓 Masuk</button><button class="btn ghost" onclick="closeT()">Batal</button></div><p style="font-size:11.5px;color:var(--muted);margin-top:10px">PIN: 1234</p></div>';
   document.body.appendChild(w);
 }
 
@@ -1053,7 +1498,7 @@ function checkPin() {
     closeT();
     teacherPanel();
   } else {
-    toast('PIN salah.');
+    toast('❌ PIN salah.');
   }
 }
 
@@ -1061,7 +1506,7 @@ function teacherPanel() {
   var w = document.createElement('div');
   w.className = 'overlay';
   w.id = 'tOverlay';
-  w.innerHTML = '<div class="modal wide"><div class="row"><h2 style="flex:1">Panel Guru</h2><button class="btn ghost sm" onclick="closeT()">Tutup</button></div><div id="tBody"></div></div>';
+  w.innerHTML = '<div class="modal wide"><div class="row"><h2 style="flex:1">⚙️ Panel Guru</h2><button class="btn ghost sm" onclick="closeT()">✕ Tutup</button></div><div id="tBody"></div></div>';
   closeT();
   document.body.appendChild(w);
   teacherTab();
@@ -1073,10 +1518,11 @@ function teacherTab() {
   
   b.innerHTML = `
     <div class="tabs">
-      <button class="tab active" onclick="teacherTabContent('identitas')">Identitas</button>
-      <button class="tab" onclick="teacherTabContent('sheet')">Spreadsheet</button>
-      <button class="tab" onclick="teacherTabContent('rekap')">Rekap</button>
-      <button class="tab" onclick="teacherTabContent('reset')">Keamanan</button>
+      <button class="tab active" onclick="teacherTabContent('identitas')">📝 Identitas</button>
+      <button class="tab" onclick="teacherTabContent('sheet')">📊 Spreadsheet</button>
+      <button class="tab" onclick="teacherTabContent('rekap')">📋 Rekap</button>
+      <button class="tab" onclick="teacherTabContent('soal')">📝 Soal</button>
+      <button class="tab" onclick="teacherTabContent('reset')">🔒 Keamanan</button>
     </div>
     <div id="tBodyContent"></div>
   `;
@@ -1090,6 +1536,7 @@ function teacherTabContent(tab) {
       identitas: 'identitas',
       sheet: 'spreadsheet',
       rekap: 'rekap',
+      soal: 'soal',
       reset: 'keamanan'
     }[tab]));
   }
@@ -1100,50 +1547,46 @@ function teacherTabContent(tab) {
   if (tab === 'identitas') {
     b.innerHTML = `
       <div class="grid2">
-        <div class="tile">
-          <b>Foto Profil Guru</b>
-          <div class="avatar" style="width:76px;height:76px;margin:10px 0;background:var(--blue-soft);color:var(--blue);font-size:10px" id="prevPhoto">FOTO</div>
-          <input type="file" accept="image/*" onchange="upload(this,'photo')">
-        </div>
-        <div class="tile">
-          <b>Logo / Foto Sekolah</b>
-          <div class="avatar" style="width:76px;height:76px;margin:10px 0;background:var(--green-soft);color:var(--green);font-size:10px" id="prevLogo">LOGO</div>
-          <input type="file" accept="image/*" onchange="upload(this,'logo')">
-        </div>
+        <div class="tile"><b>📸 Foto Guru</b><div class="avatar" style="width:76px;height:76px;margin:10px 0;background:var(--blue-soft);color:var(--blue);font-size:10px" id="prevPhoto">FOTO</div><input type="file" accept="image/*" onchange="upload(this,'photo')"></div>
+        <div class="tile"><b>🏫 Logo Sekolah</b><div class="avatar" style="width:76px;height:76px;margin:10px 0;background:var(--green-soft);color:var(--green);font-size:10px" id="prevLogo">LOGO</div><input type="file" accept="image/*" onchange="upload(this,'logo')"></div>
       </div>
-      <div class="field" style="margin-top:14px"><label>Nama Guru</label><input id="cTeacher" value="${cfg.teacher}"></div>
-      <div class="field"><label>Jabatan</label><input id="cRole" value="${cfg.role}"></div>
-      <div class="field"><label>Kelas yang Diampu</label><input id="cClasses" value="${cfg.classes}"></div>
-      <div class="field"><label>Nama Sekolah</label><input id="cSchool" value="${cfg.school}"></div>
+      <div class="field"><label>👨‍🏫 Nama Guru</label><input id="cTeacher" value="${cfg.teacher}"></div>
+      <div class="field"><label>📌 Jabatan</label><input id="cRole" value="${cfg.role}"></div>
+      <div class="field"><label>📚 Kelas yang Diampu</label><input id="cClasses" value="${cfg.classes}"></div>
+      <div class="field"><label>🏫 Nama Sekolah</label><input id="cSchool" value="${cfg.school}"></div>
       <button class="btn" onclick="saveIdentity()">💾 Simpan</button>
+      <div class="note gold">✅ Perubahan LANGSUNG tampil di dashboard siswa!</div>
     `;
     applyPhotos();
   }
   
   if (tab === 'sheet') {
     b.innerHTML = `
-      <div class="field"><label>Google Apps Script URL</label>
+      <div class="field"><label>🔗 Google Apps Script URL</label>
         <input id="cUrl" placeholder="https://script.google.com/macros/s/..../exec" value="${cfg.sheetUrl}">
+        <p style="font-size:11px;color:var(--muted);margin-top:4px">⚠️ URL ini hanya perlu di-set SEKALI oleh guru.</p>
       </div>
       <div class="row">
-        <button class="btn" onclick="saveUrl()">Simpan URL</button>
-        <button class="btn ghost" onclick="testUrl()">Tes Kirim</button>
+        <button class="btn" onclick="saveUrl()">💾 Simpan</button>
+        <button class="btn ghost" onclick="testUrl()">📤 Tes Kirim</button>
       </div>
       <div id="testStat" style="font-size:12.5px;margin-top:10px"></div>
+      <div class="note"><b>📖 Cara membuat Web App:</b> Buka Spreadsheet → Extensions → Apps Script → Deploy → Web App → Salin URL.</div>
     `;
   }
   
   if (tab === 'rekap') renderRekap();
+  if (tab === 'soal') renderSoal();
   
   if (tab === 'reset') {
     b.innerHTML = `
-      <div class="field"><label>Ubah PIN</label><input id="cPin" value="${cfg.pin}" maxlength="8"></div>
-      <button class="btn" onclick="savePin()">Simpan PIN</button>
-      <div class="row" style="margin-top:10px">
-        <button class="btn ghost sm" onclick="resetData('scores')">Hapus Skor</button>
-        <button class="btn ghost sm" onclick="resetData('roster')">Hapus Absensi</button>
-        <button class="btn ghost sm" onclick="resetData('all')">Reset Semua</button>
-      </div>
+      <div class="field"><label>🔑 Ubah PIN</label><input id="cPin" value="${cfg.pin}" maxlength="8"></div>
+      <button class="btn" onclick="savePin()">💾 Simpan</button>
+      <div class="note warn" style="margin-top:20px"><b>👤 Manajemen Siswa</b></div>
+      <div class="row"><button class="btn orange sm" onclick="forceLogoutStudent()">🚪 Logout Siswa</button><button class="btn ghost sm" onclick="clearStudentData()">🗑️ Hapus Data</button><button class="btn ghost sm" onclick="showStudentInfo()">👤 Info</button></div>
+      <div id="studentInfo" style="margin-top:10px;padding:10px;background:var(--bg);border-radius:10px;display:none"></div>
+      <div class="note warn" style="margin-top:20px"><b>🔄 Reset Data Lokal</b></div>
+      <div class="row"><button class="btn ghost sm" onclick="resetData('scores')">📊 Hapus Skor</button><button class="btn ghost sm" onclick="resetData('roster')">📋 Hapus Absensi</button><button class="btn ghost sm" onclick="resetData('all')">🗑️ Reset Semua</button></div>
     `;
   }
 }
@@ -1151,70 +1594,92 @@ function teacherTabContent(tab) {
 function renderRekap() {
   var b = document.getElementById('tBodyContent');
   if(!b) return;
-  b.innerHTML = `<div class="row"><input id="fq" placeholder="Cari nama..." style="flex:1;padding:10px;border:1.5px solid var(--line);border-radius:11px" oninput="fillRekap()"><button class="btn ghost sm" onclick="exportCSV()">Export CSV</button></div>
-    <h3>Absensi</h3><div class="tblwrap" id="rAbs"></div><h3>Skor</h3><div class="tblwrap" id="rSco"></div>`;
+  b.innerHTML = `<div class="row"><input id="fq" placeholder="🔍 Cari nama..." style="flex:1;padding:10px;border:1.5px solid var(--line);border-radius:11px" oninput="fillRekap()"><button class="btn ghost sm" onclick="exportCSV()">📥 Export CSV</button></div>
+    <h3>📋 Absensi</h3><div class="tblwrap" id="rAbs"></div><h3>📊 Skor</h3><div class="tblwrap" id="rSco"></div>`;
   fillRekap();
 }
 
 function fillRekap() {
   var q = (document.getElementById('fq') && document.getElementById('fq').value || '').toLowerCase();
-  var fa = [];
-  var fs = [];
+  var fa = []; var fs = [];
   for (var i = 0; i < roster.length; i++) {
     if ((roster[i].name + roster[i].grade).toLowerCase().indexOf(q) !== -1) fa.push(roster[i]);
   }
   for (var s = 0; s < scores.length; s++) {
     if ((scores[s].name + scores[s].grade).toLowerCase().indexOf(q) !== -1) fs.push(scores[s]);
   }
-  
-  var rAbs = document.getElementById('rAbs');
-  var rSco = document.getElementById('rSco');
-  
-  if (rAbs) {
-    if (fa.length) {
-      var html = '<table><tr><th>Waktu</th><th>Nama</th><th>Kelas</th><th>Alamat</th><th>Mapel</th></tr>';
-      for (var f = fa.length - 1; f >= 0; f--) {
-        html += '<tr><td>' + fa[f].ts + '</td><td>' + fa[f].name + '</td><td>' + fa[f].grade + '</td><td>' + fa[f].address + '</td><td>' + fa[f].subject + '</td></tr>';
-      }
-      html += '</table>';
-      rAbs.innerHTML = html;
-    } else {
-      rAbs.innerHTML = '<div style="padding:14px;color:var(--muted)">Belum ada data absensi.</div>';
-    }
-  }
-  
-  if (rSco) {
-    if (fs.length) {
-      var html = '<table><tr><th>Waktu</th><th>Nama</th><th>Kelas</th><th>Judul</th><th>Benar</th><th>Salah</th><th>Nilai</th></tr>';
-      for (var f = fs.length - 1; f >= 0; f--) {
-        html += '<tr><td>' + fs[f].ts + '</td><td>' + fs[f].name + '</td><td>' + fs[f].grade + '</td><td>' + fs[f].title + '</td><td>' + fs[f].correct + '</td><td>' + fs[f].wrong + '</td><td><b>' + fs[f].score + '</b></td></tr>';
-      }
-      html += '</table>';
-      rSco.innerHTML = html;
-    } else {
-      rSco.innerHTML = '<div style="padding:14px;color:var(--muted)">Belum ada data skor.</div>';
-    }
-  }
+  document.getElementById('rAbs').innerHTML = fa.length ? '<table><tr><th>Waktu</th><th>Nama</th><th>Kelas</th><th>Alamat</th><th>Mapel</th></tr>' + fa.slice().reverse().map(function(r){ return '<tr><td>'+r.ts+'</td><td>'+r.name+'</td><td>'+r.grade+'</td><td>'+r.address+'</td><td>'+r.subject+'</td></tr>'; }).join('') + '</table>' : '<div style="padding:14px;color:var(--muted)">Belum ada data absensi.</div>';
+  document.getElementById('rSco').innerHTML = fs.length ? '<table><tr><th>Waktu</th><th>Nama</th><th>Kelas</th><th>Judul</th><th>Benar</th><th>Salah</th><th>Nilai</th></tr>' + fs.slice().reverse().map(function(r){ return '<tr><td>'+r.ts+'</td><td>'+r.name+'</td><td>'+r.grade+'</td><td>'+r.title+'</td><td>'+r.correct+'</td><td>'+r.wrong+'</td><td><b>'+r.score+'</b></td></tr>'; }).join('') + '</table>' : '<div style="padding:14px;color:var(--muted)">Belum ada data skor.</div>';
 }
 
 function exportCSV() {
   var rows = [['Timestamp','Nama','Kelas','Alamat','Mapel','Judul','Benar','Salah','Nilai']];
   for (var i = 0; i < scores.length; i++) {
-    var s = scores[i];
-    rows.push([s.ts, s.name, s.grade, s.address, s.subject, s.title, s.correct, s.wrong, s.score]);
+    rows.push([scores[i].ts, scores[i].name, scores[i].grade, scores[i].address, scores[i].subject, scores[i].title, scores[i].correct, scores[i].wrong, scores[i].score]);
   }
-  var csv = '';
-  for (var r = 0; r < rows.length; r++) {
-    var row = [];
-    for (var c = 0; c < rows[r].length; c++) {
-      row.push('"' + String(rows[r][c]).replace(/"/g, '""') + '"');
-    }
-    csv += row.join(',') + '\n';
-  }
+  var csv = rows.map(function(r){ return r.map(function(c){ return '"' + String(c).replace(/"/g,'""') + '"'; }).join(','); }).join('\n');
   var a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([csv], {type: 'text/csv'}));
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
   a.download = 'rekap-berpikir-komputasional.csv';
   a.click();
+}
+
+function renderSoal() {
+  var b = document.getElementById('tBodyContent');
+  if(!b) return;
+  var list = bank[soalTopic] || [];
+  var html = '<div class="field"><label>Pilih Materi</label><select onchange="soalTopic=this.value;renderSoal()">';
+  for (var m = 0; m < MATERI.length; m++) {
+    html += '<option value="'+MATERI[m].id+'" '+(MATERI[m].id===soalTopic?'selected':'')+'>'+MATERI[m].title+'</option>';
+  }
+  html += '</select></div>';
+  for (var i = 0; i < list.length; i++) {
+    html += '<div class="q"><div class="field"><label>Soal '+(i+1)+'</label><textarea rows="2" id="sq'+i+'">'+list[i].q+'</textarea></div>';
+    for (var j = 0; j < 4; j++) {
+      html += '<div class="field"><label>Opsi '+String.fromCharCode(65+j)+'</label><input id="so'+i+'_'+j+'" value="'+list[i].o[j].replace(/"/g,'&quot;')+'"></div>';
+    }
+    html += '<div class="row"><div class="field"><label>Jawaban Benar</label><select id="sa'+i+'">';
+    for (var a = 0; a < 4; a++) {
+      html += '<option value="'+a+'" '+(list[i].a===a?'selected':'')+'>'+String.fromCharCode(65+a)+'</option>';
+    }
+    html += '</select></div><div class="field"><label>Pembahasan</label><input id="se'+i+'" value="'+list[i].e.replace(/"/g,'&quot;')+'"></div></div>';
+    html += '<button class="btn ghost sm" onclick="delSoal('+i+')">🗑️ Hapus</button></div>';
+  }
+  html += '<div class="row"><button class="btn" onclick="saveSoal()">💾 Simpan</button><button class="btn green" onclick="addSoal()">➕ Tambah</button></div>';
+  b.innerHTML = html;
+}
+
+var soalTopic = MATERI[0].id;
+
+function saveSoal() {
+  var list = bank[soalTopic] || [];
+  for (var i = 0; i < list.length; i++) {
+    list[i].q = document.getElementById('sq'+i).value;
+    list[i].o = [];
+    for (var j = 0; j < 4; j++) {
+      list[i].o.push(document.getElementById('so'+i+'_'+j).value);
+    }
+    list[i].a = parseInt(document.getElementById('sa'+i).value);
+    list[i].e = document.getElementById('se'+i).value;
+  }
+  bank[soalTopic] = list;
+  saveSafe(K.bank, bank);
+  toast('💾 Soal tersimpan.');
+}
+
+function addSoal() {
+  try { saveSoal(); } catch(e) {}
+  if (!bank[soalTopic]) bank[soalTopic] = [];
+  bank[soalTopic].push({q:'Soal baru...',o:['Opsi A','Opsi B','Opsi C','Opsi D'],a:0,e:'Pembahasan singkat.'});
+  saveSafe(K.bank, bank);
+  renderSoal();
+}
+
+function delSoal(i) {
+  bank[soalTopic].splice(i, 1);
+  saveSafe(K.bank, bank);
+  renderSoal();
+  toast('🗑️ Soal dihapus.');
 }
 
 // ==================== SETTINGS ====================
@@ -1250,10 +1715,10 @@ function testUrl() {
 
 function savePin() {
   var v = document.getElementById('cPin').value.trim();
-  if (v.length < 4) { toast('PIN minimal 4 digit.'); return; }
+  if (v.length < 4) { toast('⚠️ PIN minimal 4 digit.'); return; }
   cfg.pin = v;
   saveSafe(K.cfg, cfg);
-  toast('PIN diperbarui.');
+  toast('🔑 PIN diperbarui.');
 }
 
 function upload(inp, key) {
@@ -1270,7 +1735,7 @@ function upload(inp, key) {
 }
 
 function resetData(t) {
-  if (!confirm('Yakin menghapus data ini?')) return;
+  if (!confirm('⚠️ Yakin menghapus data ini?')) return;
   if (t === 'scores') { scores = []; saveSafe(K.scores, scores); }
   if (t === 'roster') { roster = []; saveSafe(K.roster, roster); }
   if (t === 'all') {
@@ -1281,8 +1746,45 @@ function resetData(t) {
     saveSafe(K.lab, labData);
   }
   buildNav();
-  toast('Data direset.');
+  toast('🗑️ Data direset.');
   teacherTab();
+}
+
+// ==================== MANAJEMEN SISWA ====================
+function forceLogoutStudent() {
+  if (!student) { toast('Tidak ada siswa yang login.'); return; }
+  if (!confirm('⚠️ Yakin logout ' + student.name + '?')) return;
+  localStorage.removeItem(K.student);
+  student = null;
+  document.getElementById('gate').classList.remove('hidden');
+  go('beranda');
+  updateLogoutButton();
+  toast('👋 Logout berhasil.');
+  teacherTab();
+}
+
+function clearStudentData() {
+  if (!student) { toast('Tidak ada data.'); return; }
+  if (!confirm('⚠️ Hapus semua data ' + student.name + '?')) return;
+  localStorage.removeItem(K.student);
+  student = null;
+  document.getElementById('gate').classList.remove('hidden');
+  go('beranda');
+  updateLogoutButton();
+  toast('🗑️ Data dihapus.');
+  teacherTab();
+}
+
+function showStudentInfo() {
+  var infoDiv = document.getElementById('studentInfo');
+  if (!infoDiv) return;
+  if (student) {
+    infoDiv.style.display = 'block';
+    infoDiv.innerHTML = '<div style="display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:4px 0"><b>Nama:</b> <span>' + student.name + '</span><b>Kelas:</b> <span>' + student.grade + '</span><b>Alamat:</b> <span>' + student.address + '</span><b>Login:</b> <span>' + new Date(student.at).toLocaleString('id-ID') + '</span><b>Status:</b> <span style="color:var(--green)">✅ Aktif</span></div>';
+  } else {
+    infoDiv.style.display = 'block';
+    infoDiv.innerHTML = '<div style="padding:8px;color:var(--muted);text-align:center">❌ Tidak ada siswa yang login.</div>';
+  }
 }
 
 // ==================== IDENTITAS ====================
@@ -1310,29 +1812,27 @@ function applyPhotos() {
   var al = document.getElementById('aboutLogo');
   var pp = document.getElementById('prevPhoto');
   var pl = document.getElementById('prevLogo');
-  if(tp) tp.innerHTML = cfg.photo ? '<img src="' + cfg.photo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'FOTO<br>GURU';
-  if(sl) sl.innerHTML = cfg.logo ? '<img src="' + cfg.logo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'LOGO<br>SEKOLAH';
+  if(tp) tp.innerHTML = cfg.photo ? '<img src="' + cfg.photo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'FOTO';
+  if(sl) sl.innerHTML = cfg.logo ? '<img src="' + cfg.logo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'LOGO';
   if(ap) ap.innerHTML = cfg.photo ? '<img src="' + cfg.photo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'FOTO GURU';
-  if(al) al.innerHTML = cfg.logo ? '<img src="' + cfg.logo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'LOGO SEKOLAH';
+  if(al) al.innerHTML = cfg.logo ? '<img src="' + cfg.logo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'LOGO';
   if(pp) pp.innerHTML = cfg.photo ? '<img src="' + cfg.photo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'FOTO';
   if(pl) pl.innerHTML = cfg.logo ? '<img src="' + cfg.logo + '" style="width:100%;height:100%;border-radius:50%;object-fit:cover">' : 'LOGO';
 }
 
-// ==================== LOGOUT ====================
 function updateLogoutButton() {
   var btn = document.getElementById('logoutBtn');
-  if(!btn) return;
-  if(student) { btn.style.display = 'inline-block'; btn.textContent = '🚪 ' + student.name; }
+  if (!btn) return;
+  if (student) { btn.style.display = 'inline-block'; btn.textContent = '🚪 ' + student.name; }
   else { btn.style.display = 'none'; }
 }
 
 function logoutStudent() {
-  if(!student) return;
-  if(!confirm('👋 Yakin logout?')) return;
+  if (!student) return;
+  if (!confirm('👋 Yakin logout?')) return;
   localStorage.removeItem(K.student);
   student = null;
-  var gate = document.getElementById('gate');
-  if(gate) gate.classList.remove('hidden');
+  document.getElementById('gate').classList.remove('hidden');
   go('beranda');
   updateLogoutButton();
   toast('👋 Logout berhasil!');
@@ -1340,35 +1840,31 @@ function logoutStudent() {
 
 // ==================== INIT ====================
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 Inisialisasi aplikasi...');
-  
+  console.log('🚀 Berpikir Komputasional - Profesional Edition');
   var yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
-  
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
   applyIdentity();
   applyPhotos();
   buildNav();
   updateLogoutButton();
-  
-  if(student) {
+  if (student) {
     var gate = document.getElementById('gate');
-    if(gate) gate.classList.add('hidden');
+    if (gate) gate.classList.add('hidden');
     go('beranda');
   }
-  
-  console.log('🚀 Berpikir Komputasional siap!');
+  console.log('✅ Aplikasi siap!');
 });
 
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  var yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+  var yearEl2 = document.getElementById('year');
+  if (yearEl2) yearEl2.textContent = new Date().getFullYear();
   applyIdentity();
   applyPhotos();
   buildNav();
   updateLogoutButton();
-  if(student) {
-    var gate = document.getElementById('gate');
-    if(gate) gate.classList.add('hidden');
+  if (student) {
+    var gate2 = document.getElementById('gate');
+    if (gate2) gate2.classList.add('hidden');
     go('beranda');
   }
 }
