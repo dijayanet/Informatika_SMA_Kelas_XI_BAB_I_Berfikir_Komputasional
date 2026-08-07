@@ -588,7 +588,7 @@ function resendScores() {
   });
 }
 
-// ==================== QUIZ PAGE (15 Soal) ====================
+// ==================== QUIZ PAGE (15 Soal) - DIPERBAIKI ====================
 const quizData = [
   { q: 'Apa yang dimaksud dengan Stack?', opt: ['LIFO', 'FIFO', 'Tree', 'Graph'], ans: 0 },
   { q: 'Queue menggunakan prinsip?', opt: ['LIFO', 'FIFO', 'DFS', 'BFS'], ans: 1 },
@@ -614,8 +614,8 @@ function renderQuizPage() {
     <p class="lead">Jawab semua soal, skor akan ditampilkan. Jika nilai > 80, dapatkan sertifikat.</p>
     <div id="quizContainer"></div>
     <div class="row mt-12">
-      <button class="btn orange" id="submitQuizBtn">Submit Quiz</button>
-      <button class="btn ghost" id="resetQuizBtn">Reset</button>
+      <button class="btn orange" id="submitQuizBtn">✅ Submit Quiz</button>
+      <button class="btn ghost" id="resetQuizBtn">🔄 Reset</button>
     </div>
     <div id="quizResult" class="mt-12" style="font-weight:700;font-size:1.2rem;"></div>
     <div id="sertifikatArea" class="sertifikat-area hidden">
@@ -625,15 +625,37 @@ function renderQuizPage() {
     </div>
   </div>`;
   main.innerHTML = html;
-  renderQuiz();
-  // Event listeners
-  document.getElementById('submitQuizBtn').addEventListener('click', submitQuiz);
-  document.getElementById('resetQuizBtn').addEventListener('click', resetQuiz);
-  document.getElementById('cetakSertifikatBtn').addEventListener('click', cetakSertifikat);
+  
+  // Render quiz options
+  renderQuizOptions();
+  
+  // 🔥 EVENT LISTENER - Pastikan tombol ditemukan
+  const submitBtn = document.getElementById('submitQuizBtn');
+  const resetBtn = document.getElementById('resetQuizBtn');
+  const cetakBtn = document.getElementById('cetakSertifikatBtn');
+  
+  if (submitBtn) {
+    submitBtn.addEventListener('click', submitQuiz);
+  } else {
+    console.error('❌ Tombol Submit tidak ditemukan!');
+  }
+  
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetQuiz);
+  }
+  
+  if (cetakBtn) {
+    cetakBtn.addEventListener('click', cetakSertifikat);
+  }
 }
 
-function renderQuiz() {
+function renderQuizOptions() {
   const container = document.getElementById('quizContainer');
+  if (!container) {
+    console.error('❌ Container quiz tidak ditemukan!');
+    return;
+  }
+  
   let html = '';
   quizData.forEach((item, idx) => {
     html += `<div class="card" style="border-left:4px solid var(--gold);">
@@ -646,6 +668,7 @@ function renderQuiz() {
   });
   container.innerHTML = html;
 
+  // Event listener untuk pilihan jawaban
   document.querySelectorAll('.quiz-option').forEach(el => {
     el.addEventListener('click', function() {
       const q = parseInt(this.dataset.q);
@@ -658,7 +681,17 @@ function renderQuiz() {
   });
 }
 
+// 🔥 FUNGSI SUBMIT QUIZ - DIPERBAIKI
 function submitQuiz() {
+  console.log('📝 Submit quiz dipanggil!');
+  
+  // Cek apakah semua soal sudah dijawab
+  const unanswered = userAnswers.some(ans => ans === -1);
+  if (unanswered) {
+    toast('⚠️ Masih ada soal yang belum dijawab!');
+    return;
+  }
+  
   let benar = 0;
   quizData.forEach((item, idx) => {
     const jawab = userAnswers[idx];
@@ -666,56 +699,94 @@ function submitQuiz() {
     optEls.forEach(el => {
       el.classList.remove('correct', 'wrong');
       const oi = parseInt(el.dataset.opt);
-      if (oi === item.ans) el.classList.add('correct');
-      else if (oi === jawab && jawab !== item.ans) el.classList.add('wrong');
+      if (oi === item.ans) {
+        el.classList.add('correct');
+      } else if (oi === jawab && jawab !== item.ans) {
+        el.classList.add('wrong');
+      }
     });
     if (jawab === item.ans) benar++;
   });
+  
   const total = quizData.length;
-  const nilai = Math.round((benar/total)*100);
+  const nilai = Math.round((benar / total) * 100);
   const resultEl = document.getElementById('quizResult');
-  resultEl.innerHTML = `Skor: ${benar}/${total} (${nilai}%)`;
   
-  // Simpan skor ke localStorage
-  const rec = { ts: new Date().toLocaleString('id-ID'), name: student?student.name:'-', grade: student?student.grade:'-', address: student?student.address:'-', subject:'Informatika', title: 'Quiz 15 Soal - Berpikir Komputasional', correct: benar, wrong: total - benar, score: nilai };
-  scores.push(rec);
-  save(K.scores, scores);
+  if (resultEl) {
+    resultEl.innerHTML = `📊 Skor: ${benar}/${total} (${nilai}%) — ${nilai >= 80 ? '🎉 Lulus!' : '📚 Belajar lagi!'}`;
+  }
   
-  // Kirim ke spreadsheet
-  sendToSheet('skor', { timestamp: rec.ts, nama: rec.name, kelas: rec.grade, alamat: rec.address, mapel: rec.subject, judul_kuis: rec.title, benar: rec.correct, salah: rec.wrong, nilai: rec.score }, document.getElementById('sendStatus'));
+  // 🔥 Simpan skor ke localStorage
+  if (student) {
+    const rec = { 
+      ts: new Date().toLocaleString('id-ID'), 
+      name: student.name, 
+      grade: student.grade, 
+      address: student.address, 
+      subject: 'Informatika', 
+      title: 'Quiz 15 Soal - Berpikir Komputasional', 
+      correct: benar, 
+      wrong: total - benar, 
+      score: nilai 
+    };
+    scores.push(rec);
+    save(K.scores, scores);
+    console.log('✅ Skor tersimpan:', rec);
+    
+    // 🔥 Kirim ke spreadsheet
+    sendToSheet('skor', { 
+      timestamp: rec.ts, 
+      nama: rec.name, 
+      kelas: rec.grade, 
+      alamat: rec.address, 
+      mapel: rec.subject, 
+      judul_kuis: rec.title, 
+      benar: rec.correct, 
+      salah: rec.wrong, 
+      nilai: rec.score 
+    }, null);
+  }
   
   const sertifikatEl = document.getElementById('sertifikatArea');
-  if (nilai > 80) {
-    sertifikatEl.classList.remove('hidden');
-    toast('🎉 Selamat! Anda lulus dengan nilai > 80!');
-  } else {
-    sertifikatEl.classList.add('hidden');
-    toast('📚 Nilai di bawah 80. Coba lagi!');
+  if (sertifikatEl) {
+    if (nilai > 80) {
+      sertifikatEl.classList.remove('hidden');
+      toast('🎉 Selamat! Anda lulus dengan nilai > 80!');
+    } else {
+      sertifikatEl.classList.add('hidden');
+      toast('📚 Nilai di bawah 80. Coba lagi!');
+    }
   }
 }
 
+// 🔥 FUNGSI RESET QUIZ
 function resetQuiz() {
   userAnswers.fill(-1);
-  renderQuiz();
-  document.getElementById('quizResult').innerHTML = '';
-  document.getElementById('sertifikatArea').classList.add('hidden');
+  renderQuizOptions();
+  const resultEl = document.getElementById('quizResult');
+  if (resultEl) resultEl.innerHTML = '';
+  const sertifikatEl = document.getElementById('sertifikatArea');
+  if (sertifikatEl) sertifikatEl.classList.add('hidden');
   toast('🔄 Quiz direset!');
 }
 
+// 🔥 FUNGSI CETAK SERTIFIKAT
 function cetakSertifikat() {
-  const win = window.open('', '_blank', 'width=600,height=400');
+  const nama = student ? student.name : '___________________';
+  const win = window.open('', '_blank', 'width=600,height=500');
   win.document.write(`
     <html><head><title>Sertifikat</title>
-    <style>body{font-family:'Poppins',sans-serif;text-align:center;padding:40px;background:#f5f0e1;border:8px solid #C5A028;}
-    h1{color:#0B4D2E;font-size:2.5rem;border-bottom:4px solid #C5A028;padding-bottom:10px;}
-    .gold{color:#C5A028;} .hijau{color:#0B4D2E;}
-    .nama{font-size:2.2rem;color:#0B4D2E;border-bottom:2px dashed #C5A028;display:inline-block;padding:0 40px;}
+    <style>
+      body{font-family:'Poppins',sans-serif;text-align:center;padding:40px;background:#f5f0e1;border:8px solid #C5A028;}
+      h1{color:#0B4D2E;font-size:2.5rem;border-bottom:4px solid #C5A028;padding-bottom:10px;}
+      .gold{color:#C5A028;} .hijau{color:#0B4D2E;}
+      .nama{font-size:2rem;color:#0B4D2E;border-bottom:2px dashed #C5A028;display:inline-block;padding:0 40px;margin:20px 0;}
     </style>
     </head><body>
     <h1>🏅 Sertifikat</h1>
-    <p style="font-size:1.2rem;margin-top:20px;">Diberikan kepada:</p>
-    <h2 class="nama">${student ? student.name : '___________________'}</h2>
-    <p style="font-size:1.1rem;margin-top:20px;">Atas keberhasilan menyelesaikan Quiz Bab 1</p>
+    <p style="font-size:1.2rem;">Diberikan kepada:</p>
+    <h2 class="nama">${nama}</h2>
+    <p style="font-size:1.1rem;">Atas keberhasilan menyelesaikan Quiz Bab 1</p>
     <p style="font-size:1.3rem;font-weight:700;color:#0B4D2E;">Berpikir Komputasional</p>
     <p style="font-size:1.1rem;">dengan nilai <span style="color:#C5A028;font-weight:700;">> 80</span></p>
     <p style="margin-top:30px;font-size:0.9rem;color:#0B4D2E;">SMA Islam Al-Mizan Jatiwangi</p>
@@ -726,8 +797,7 @@ function cetakSertifikat() {
   `);
   win.document.close();
 }
-
-// ==================== PROYEK MINI ====================
+   // ==================== PROYEK MINI ====================
 function renderProyekPage() {
   main.innerHTML = `
     <div class="card"><span class="eyebrow">📁 Proyek</span><h2>Proyek Mini - Perpustakaan Al-Mizan</h2>
